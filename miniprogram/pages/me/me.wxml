@@ -1,0 +1,22 @@
+<!--pages/me/me.wxml-->
+<view class='container'>
+  <view class='information-container' >
+    <image class='information-bg' src='/images/post-1.jpg' style="opacity:{{0.2}}"></image>
+    <view class='information'>
+      <image class='information-avatar' src='/images/icon.png'></image>
+      <text class='information-name' >名字</text>
+      <text decode='true'class='right'>&gt;</text>
+    </view>
+  </view>
+
+<view class='suggestion'>
+  <image class='suggestion-avatar' src='/images/icon.png'></image>
+  <text class='suggestion-name' >意见反馈</text>
+</view>
+
+<view class='suggestion'>
+  <image class='suggestion-avatar' src='/images/icon.png'></image>
+  <text class='suggestion-name' >设置</text>
+</view> 
+
+</view>

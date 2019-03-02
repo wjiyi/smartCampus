@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/discovery/discovery",
+    "pages/login/login",
+    "pages/me/me"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "智慧校园",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#8d8d8d",
+    "selectedColor": "#f89422",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "images/icon2.jpg",
+      "selectedIconPath": "images/icon.png"
+    },
+    {
+      "pagePath": "pages/discovery/discovery",
+      "text": "发现",
+      "iconPath": "images/discover.png",
+      "selectedIconPath": "images/icon.png"
+    },
+    {
+      "pagePath": "pages/me/me",
+      "text": "我的",
+      "iconPath": "images/icon2.jpg",
+      "selectedIconPath": "images/icon.png"
+    }
+    ]
+  }
+}
