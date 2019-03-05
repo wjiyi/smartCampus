@@ -27,8 +27,9 @@ swiper image{
   flex-direction: column;
 }
 .app image{
-  width: 128rpx;
+  width: 100rpx;
   height: 100rpx;
+  border-radius: 50rpx;
 }
 .app text{
   text-align: center;
@@ -41,21 +42,33 @@ swiper image{
 }
 
 .activity{
+  display: flex;
+  flex-direction: row;
+  height: 150rpx;
   position: relative;
   width: 100%;
-  height: 160rpx;
-  margin-top: 10rpx;
+  justify-content: center;
+  margin: 10rpx;
 }
 .activity image{
   width: 100%;
   height: 100%;
 }
-.activity .act-content{
+.act-content{
   position: absolute;
-  bottom: 0;
   display: flex;
-  display: -webkit-flex;
   flex-direction: row;
+  color: #fff;
+  font-style: bold;
+  bottom: 0;
+}
+
+.title-more{
+  font-size: 30rpx;
+  float: right;
+  align-items: center;
+  position: relative;
+  margin-right: 20rpx;
 }
 
 

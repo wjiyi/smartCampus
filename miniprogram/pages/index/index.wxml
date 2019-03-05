@@ -1,4 +1,5 @@
 <!--index.wxml-->
+<!-- 首页 -->
 <view class="container">
   <swiper catchtap="onSwiperTap" vertical="{{false}}"  indicator-dots="true" autoplay="true" interval="5000" circular="true">
     <swiper-item>
@@ -15,38 +16,38 @@
   <view class="apps">
     <view class='row'>
       <view class='app'>
-        <image src='/images/icon.png'></image>
+        <image src='/images/school.png'></image>
         <text>校园介绍</text>
       </view>
       <view class='app'>
-        <image src='/images/icon.png'></image>
+        <image src='/images/system.png'></image>
         <text>教务系统</text>
       </view>
-      <view class='app'>
-        <image src='/images/icon.png'></image>
-        <text>校园活动</text>
+      <view class='app' bindtap='goToHelp'>
+        <image src='/images/help.png'></image>
+        <text>帮帮助手</text>
       </view>
       <view class='app'>
-        <image src='/images/icon.png'></image>
-        <text>校园活动</text>
+        <image src='/images/new.png'></image>
+        <text>校园资讯</text>
       </view>
     </view>
 
     <view class='row'>
       <view class='app'>
-        <image src='/images/icon.png'></image>
-        <text>校园活动</text>
+        <image src='/images/corporation.png'></image>
+        <text>社团组织</text>
       </view>
       <view class='app'>
-        <image src='/images/icon.png'></image>
-        <text>校园活动</text>
+        <image src='/images/second.png'></image>
+        <text>二手市场</text>
       </view>
       <view class='app'>
-        <image src='/images/icon.png'></image>
-        <text>校园活动</text>
+        <image src='/images/more.png'></image>
+        <text>敬请期待</text>
       </view>
       <view class='app'>
-        <image src='/images/icon.png'></image>
+        <image src='/images/more.png'></image>
         <text>敬请期待</text>
        </view>
     </view>
@@ -54,19 +55,18 @@
   </view>
 
   <view class='hot-title'>
-    <text class='title' decode='true'>热门内容&nbsp;&gt;</text>
+    <text class='title'>热门内容</text>
+    <text class='title-more' decode='true'>更多&nbsp;&gt;&gt;</text>
     <view class='activity'>
-      <image src='/images/post-4.jpg' style="opacity:{{0.5}}"></image>
+      <image src='/images/post-3.jpg'></image>
       <view class='act-content'>
         <text class='act-title'>当开学遇上花马丨花都摇滚马拉松邀请你来报名了</text>
-        <text class='act-time'>时间：3分钟前</text>
       </view>
     </view>
      <view class='activity'>
-      <image src='/images/post-4.jpg' style="opacity:{{0.5}}"></image>
+      <image src='/images/post-3.jpg' ></image>
       <view class='act-content'>
         <text class='act-title'>当开学遇上花马丨花都摇滚马拉松邀请你来报名了</text>
-        <text class='act-time'>时间：3分钟前</text>
       </view>
     </view>
   </view>

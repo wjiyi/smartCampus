@@ -58,7 +58,6 @@
   margin-top: 20rpx;
   align-items: center;
   background-color: #f2f2f2;
-  border-bottom: 1px #dadada solid
 }
 
 .suggestion-avatar{
@@ -67,8 +66,20 @@
   margin: 0 20rpx;
 }
 
+.suggestion-button{
+  width:600rpx;
+  background-color: #f2f2f2;
+  text-align: left;
+  font-size: 40rpx;
+}
+
+.suggestion-button::after{
+  border: none;
+}
+
 .suggestion-name{
   font-size: 40rpx;
+  margin-left: 30rpx;
 }
 
 

@@ -1,2 +1,14 @@
 <!--pages/help/help.wxml-->
-<text>pages/help/help.wxml</text>
+<!-- 帮帮助手页面 -->
+<view class="swiper-tab">
+  <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">失物招领</view>
+  <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">其他帮帮</view>
+  <view bindtap='addDetial'>
+    <image class='add_icon' src='/images/add.png'></image>
+  </view>
+</view>
+
+<swiper current="{{currentTab}}"  bindchange="swiperTab">
+  <swiper-item><view>失物招领</view></swiper-item>
+  <swiper-item><view>其他帮帮</view></swiper-item>
+</swiper>

@@ -10,6 +10,12 @@ Page({
     requestResult: ''
   },
 
+  goToHelp:function(){
+    wx.navigateTo({
+      url: '/pages/help/help',
+    })
+  },
+
   onLoad: function() {
     if (!wx.cloud) {
       wx.redirectTo({
