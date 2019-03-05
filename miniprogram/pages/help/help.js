@@ -1,30 +1,40 @@
-// pages/me/me.js
+// pages/help/help.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    currentTab: 0
   },
 
-  goToInformation:function(){
-    wx.navigateTo({
-      url: '/pages/information/information',
-    })
+  //滑动切换
+  swiperTab: function (e) {
+    var that = this;
+    that.setData({
+      currentTba: e.detail.current
+    });
   },
 
+  //点击切换
+  clickTab: function (e) {
 
-  goToMyDynamic:function(){
-    wx.navigateTo({
-      url: '/pages/myDynamic/myDynamic',
-    })
+    var that = this;
+
+    if (this.data.currentTab === e.target.dataset.current) {
+      return false;
+    } else {
+      that.setData({
+        currentTab: e.target.dataset.current
+      })
+    }
   },
-
+  
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
   },
 
   /**

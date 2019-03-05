@@ -1,4 +1,4 @@
-// pages/me/me.js
+// pages/myDynamic/myDynamic.js
 Page({
 
   /**
@@ -8,23 +8,11 @@ Page({
 
   },
 
-  goToInformation:function(){
-    wx.navigateTo({
-      url: '/pages/information/information',
-    })
-  },
-
-
-  goToMyDynamic:function(){
-    wx.navigateTo({
-      url: '/pages/myDynamic/myDynamic',
-    })
-  },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
   },
 
   /**

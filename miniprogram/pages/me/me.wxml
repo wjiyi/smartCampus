@@ -1,22 +1,30 @@
 <!--pages/me/me.wxml-->
+<!-- 我的页面 -->
 <view class='container'>
-  <view class='information-container' >
+  <view class='information-container' bindtap='goToInformation'>
     <image class='information-bg' src='/images/post-1.jpg' style="opacity:{{0.2}}"></image>
     <view class='information'>
-      <image class='information-avatar' src='/images/icon.png'></image>
+      <image class='information-avatar' src='/images/people.png'></image>
       <text class='information-name' >名字</text>
       <text decode='true'class='right'>&gt;</text>
     </view>
   </view>
 
-<view class='suggestion'>
-  <image class='suggestion-avatar' src='/images/icon.png'></image>
-  <text class='suggestion-name' >意见反馈</text>
+<view class='suggestion' bindtap='goToMyDynamic'>
+  <image class='suggestion-avatar' src='/images/state.png'></image>
+  <text class='suggestion-name' >我的动态</text>
+</view>
+
+<view class='suggestion' >
+  <image class='suggestion-avatar' src='/images/suggestion.png'></image>
+  <button class='suggestion-button' open-type='feedback'>意见反馈</button>
 </view>
 
 <view class='suggestion'>
-  <image class='suggestion-avatar' src='/images/icon.png'></image>
+  <image class='suggestion-avatar' src='/images/setting.png'></image>
   <text class='suggestion-name' >设置</text>
 </view> 
+
+
 
 </view>

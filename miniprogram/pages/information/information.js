@@ -1,4 +1,4 @@
-// pages/me/me.js
+// pages/information/information.js
 Page({
 
   /**
@@ -8,16 +8,17 @@ Page({
 
   },
 
-  goToInformation:function(){
-    wx.navigateTo({
-      url: '/pages/information/information',
-    })
-  },
-
-
-  goToMyDynamic:function(){
-    wx.navigateTo({
-      url: '/pages/myDynamic/myDynamic',
+  getLocalImage:function(options){
+    wx.chooseImage({
+      count:1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success: function(res) {
+        var tempFilePaths = res.tempFilePaths
+      },
+      fail:function(res) {
+        console.log(res.errMsg)
+      }
     })
   },
 
@@ -25,6 +26,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
   },
 
   /**

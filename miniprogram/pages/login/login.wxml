@@ -1,6 +1,7 @@
+<!-- 获取权限页面 -->
 <view wx:if="{{canIUse}}">
   <view class='header'>
-    <image src='/images/wx_login.png'></image>
+    <image src='/images/weixin.jpg'mode='widthFix'></image>
   </view>
 
   <view class='content'>
