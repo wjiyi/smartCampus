@@ -1,0 +1,14 @@
+<!--pages/add/add.wxml-->
+<!-- 编辑动态页面 -->
+<view class='page'>
+  <textarea class='text' bindinput="input" placeholder="分享动态" auto-height/>
+  <view class="image_content">
+    <view class='image' wx:for="{{img_url}}">
+      <image class="moment_img" src="{{item}}"></image>
+    </view>
+    <view class='image'>
+      <image bindtap="chooseimage" class="moment_img" src='/images/add2.png'></image>
+    </view>
+  </view>
+  <button bindtap="send" type='primary' class='sendButton'>发布</button>
+</view>
