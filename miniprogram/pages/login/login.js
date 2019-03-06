@@ -62,67 +62,41 @@ Page({
     var userInfoStorage = wx.getStorageSync('user');
     //如果缓存中没有用户信息，那么就获取用户信息
     if (!userInfoStorage) {
-      
       var that = this;
       wx.login({
-
         success: function (res) {
-          //发送请求，通过code、appid、secret获取用户的openID
-          wx.request({
-            url: 'https://api.weixin.qq.com/sns/jscode2session',
-            data: {
-              // 小程序唯一标示
-              appid: 'wxcaa41659592b4bf3',
-              // 小程序的 app secret
-              secret: '38f418d56d2b001f20eee3491ed9f93d',
-              grant_type: 'authorization_code',
-              js_code: res.code
-            },
-            method: 'GET',
-            header: { 'content-type': 'application/json' },
-            success: function (openIdRes) {
-              // 获取到 openId,赋值到全局变量openID
-              app.globalData.opennID = openIdRes.data.openid;
-              console.log("openID2:" + app.globalData.opennID);
+          //根据openID去判断该用户信息是否在数据库中
+          const db = wx.cloud.database();
+          db.collection('user').where({
+            _openid: app.globalData.openid
+          }).get({
+            success(dbres) {
+              //如果数据库中还没有该用户openID,则保存到数据库中
+              if (dbres.data.length == 0) {
+                db.collection('user').add({
+                  // data 字段表示需新增的 JSON 数据
+                  data: {
+                    openid: app.globalData.openID,
+                    nickName: detail.userInfo.nickName,
+                    avatarUrl: detail.userInfo.avatarUrl,
+                    province: detail.userInfo.province,
+                    city: detail.userInfo.city
 
-              //根据openID去判断该用户信息是否在数据库中
-              const db = wx.cloud.database();
-              db.collection('user').where({
-                _openid: app.globalData.opennID
-              }).get({
-                success(dbres) {
-                  // res.data 是包含以上定义的两条记录的数组
-                  console.log(dbres.data.length == 0)
-                  //如果数据库中还没有该用户openID,则保存到数据库中
-                  if (dbres.data.length == 0){
-                    db.collection('user').add({
-                      // data 字段表示需新增的 JSON 数据
-                      data: {
-                        openid: app.globalData.openID,
-                        nickName: detail.userInfo.nickName,
-                        avatarUrl: detail.userInfo.avatarUrl,
-                        province: detail.userInfo.province,
-                        city: detail.userInfo.city
-                        
-                      },
-                      success(res) {
-                        // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
-                        console.log("用户ID："+res._id)
-                      }
-                    })
+                  },
+                  success(res) {
+                    // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
+                    console.log("用户ID：" + res._id)
                   }
-                }
-              })
+                })
+              }
             }
           })
-          
-          //将用户的基本信息保存到缓存中
-          wx.setStorageSync('user', detail.userInfo)
         }
-      })
+      })   
+      //将用户的基本信息保存到缓存中
+      wx.setStorageSync('user', detail.userInfo);
     }
     else {
-      //如果缓存中已经存在用户的基本信息，那么将信息保存到全局变量中
       
     }
   },
