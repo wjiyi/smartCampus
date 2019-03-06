@@ -9,7 +9,14 @@ App({
         traceUser: true,
       })
     }
+  },
 
-    this.globalData = {}
+
+  /**
+     * 全局变量
+     */
+    globalData: {
+    //opennID
+    opennID: null
   }
 })

@@ -58,16 +58,11 @@
     <text class='title'>热门内容</text>
     <text class='title-more' decode='true'>更多&nbsp;&gt;&gt;</text>
     <view class='activity'>
-      <image src='/images/post-3.jpg'></image>
-      <view class='act-content'>
-        <text class='act-title'>当开学遇上花马丨花都摇滚马拉松邀请你来报名了</text>
+      <view class='act-title'>
+        <text>当开学遇上花马|花都摇滚马拉松邀请你来报名了</text>
+        <text>2019年2月3日 11:29</text>
       </view>
-    </view>
-     <view class='activity'>
-      <image src='/images/post-3.jpg' ></image>
-      <view class='act-content'>
-        <text class='act-title'>当开学遇上花马丨花都摇滚马拉松邀请你来报名了</text>
-      </view>
+      <image src='/images/post-4.jpg'></image>
     </view>
   </view>
     
