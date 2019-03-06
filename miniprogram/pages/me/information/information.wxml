@@ -1,0 +1,35 @@
+<!--pages/information/information.wxml-->
+<!-- 个人信息页面 -->
+<view class='information-container'>
+  <view class='inf-image'>
+    <text class='inf-text'>头像</text>
+    <view class='avatar' bindtap='getLocalImage'>
+      <image class='inf-avatar' src='/images/people.png'></image>
+      <text decode='true'>&gt;</text>
+    </view>
+  </view>
+  <view class='inf-image'>
+    <text class='inf-text'>昵称</text>
+    <view class='avatar'>
+      <text>武纪怡Giee</text>
+      <text decode='true'>&gt;</text>
+    </view>
+  </view>
+
+  <view class='inf-image'>
+    <text class='inf-text'>学校</text>
+    <view class='avatar'>
+      <text>华南理工大学广州学院</text>
+      <text decode='true'>&gt;</text>
+    </view>
+  </view>
+
+  <view class='inf-image'>
+    <text class='inf-text'>城市</text>
+    <view class='avatar'>
+      <text>广东湛江</text>
+      <text decode='true'>&gt;</text>
+    </view>
+  </view>
+  
+</view>
