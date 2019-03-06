@@ -1,0 +1,44 @@
+/* pages/helpAdd/helpAdd.wxss */
+.page{
+  padding: 20px
+}
+ 
+.text{
+  width: 100%;
+  margin-bottom: 40px;
+  font-size: 20px;
+  padding: 5px
+}
+ 
+.image{
+  width:31%;
+  height: 100px;
+  padding: 2px;
+}
+ 
+.moment_img{
+  width: 98px;
+  height: 98px;
+}
+ 
+.image_content{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px
+}
+
+.help_label{
+  display: flex;
+  flex-direction: column;
+}
+
+parameter-info text-over .item.checked{
+  border: 1px #f2f2f2 solid;
+}
+
+.sendButton{
+  border-radius: 80rpx;
+  margin: 70rpx 50rpx;
+  font-size: 35ropx;
+}

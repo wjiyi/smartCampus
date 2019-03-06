@@ -19,7 +19,7 @@ Page({
     //如果缓存中有用户信息，那么就跳转到首页，不跳转到登录界面
     if (userInfoStorage) {
       wx.switchTab({
-        url: '/pages/index/index',
+        url: '/pages/index/index/index',
         success: function () {
           console.log("跳转到首页 success")
         },
@@ -132,7 +132,7 @@ Page({
    */
   toIndex:function(event){
     wx.switchTab({
-      url: '/pages/index/index',
+      url: '/pages/index/index/index',
       success: function () {
         console.log("jump success")
       },

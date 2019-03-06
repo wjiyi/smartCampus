@@ -1,0 +1,64 @@
+<!--pages/me/me.wxml-->
+<!-- 我的页面 -->
+<view class='container'>
+
+  <!-- 个人信息界面 -->
+  <view class='category-item personal-info' bindtap='goToInformation'>
+    
+    <view class='user-avatar'> 
+      <image src='{{userInfo.avatarUrl}}'></image>
+    </view>
+    <view class='user-name'>
+      <view class='user-nickname'>
+        <text>{{userInfo.nickName}}</text>
+      </view>
+      <view class='user-location'> 
+        <text>所在地：{{userInfo.city}}</text>
+      </view>
+    </view>
+    <view class='detail-item' catchtap='goToMyDynamic'>
+      <view class='detail-item-btn'></view>
+    </view>
+  </view>
+
+  <view class='category-item'>
+      <view class='detail-item'>
+        <image src='/images/me/state.png'></image>
+        <text>我的动态</text>
+        <view class='detail-item-btn'></view>
+      </view>
+  </view>
+
+  <view class='category-item'>
+      <view class='detail-item'>
+        <image src='/images/me/message.png'></image>
+        <text>我的消息</text>
+        <view class='detail-item-btn'></view>
+      </view>
+  </view>
+
+  <view class='category-item'>
+      <view class='detail-item' catchtap='goToMyDynamic'>
+        <image src='/images/me/suggestion.png'></image>
+        <text>意见反馈</text>
+        <view class='detail-item-btn'></view>
+      </view>
+  </view>
+
+  <view class='category-item'>
+      <view class='detail-item' catchtap='goToMyDynamic'>
+        <image src='/images/me/setting.png'></image>
+        <text>设置</text>
+        <view class='detail-item-btn'></view>
+      </view>
+  </view>
+
+  <view class='category-item'>
+      <view class='detail-item' catchtap='goToMyDynamic'>
+        <image src='/images/me/about.png'></image>
+        <text>关于我们</text>
+        <view class='detail-item-btn'></view>
+      </view>
+  </view>
+
+</view>

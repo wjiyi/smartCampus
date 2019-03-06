@@ -1,13 +1,14 @@
 {
   "pages": [
     "pages/login/login",
-    "pages/index/index",
-    "pages/discovery/discovery",
-    "pages/me/me",
-    "pages/add/add",
-    "pages/myDynamic/myDynamic",
-    "pages/information/information",
-    "pages/help/help"
+    "pages/index/index/index",
+    "pages/discovery/discovery/discovery",
+    "pages/me/me/me",
+    "pages/discovery/add/add",
+    "pages/me/myDynamic/myDynamic",
+    "pages/me/information/information",
+    "pages/index/help/help",
+    "pages/index/helpAdd/helpAdd"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -22,19 +23,19 @@
     "backgroundColor": "#fff",
     "borderStyle": "black",
     "list": [{
-      "pagePath": "pages/index/index",
+      "pagePath": "pages/index/index/index",
       "text": "首页",
       "iconPath": "images/first.png",
       "selectedIconPath": "images/select-first.png"
     },
     {
-      "pagePath": "pages/discovery/discovery",
+      "pagePath": "pages/discovery/discovery/discovery",
       "text": "发现",
       "iconPath": "images/discovery.png",
       "selectedIconPath": "images/select-discovery.png"
     },
     {
-      "pagePath": "pages/me/me",
+      "pagePath": "pages/me/me/me",
       "text": "我的",
       "iconPath": "images/me.png",
       "selectedIconPath": "images/select-me.png"
