@@ -28,15 +28,6 @@
   margin-bottom: 20px
 }
 
-.help_label{
-  display: flex;
-  flex-direction: column;
-}
-
-parameter-info text-over .item.checked{
-  border: 1px #f2f2f2 solid;
-}
-
 .sendButton{
   border-radius: 80rpx;
   margin: 70rpx 50rpx;
