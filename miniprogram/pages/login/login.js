@@ -1,3 +1,5 @@
+var app = getApp();
+
 Page({
 
   /**
@@ -12,84 +14,138 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    //查看是否授权
-    wx.getSetting({
-      success:function (res) {
-        if(res.authSetting['scope.userInfo']) {
-          wx.getUserInfo({
-            success:function (res) {
-              //从数据库获取用户信息
-              that.queryUserInfo();
-              //用户已经授权过
-              wx.switchTab({
-                url: '../index/index',
-              })
-            }
-          });
-        }
-      }
-    })
-  },
 
-  bindGetUserInfo:function (e) {
-    if(e.detail.userInfo) {
-      //用户按了允许授权按钮
-      var that = this;
-      //插入登录的用户的相关信息到数据库
-      const db = wx.cloud.database()
-      db.collection('User').add({
-        data:{
-          openid: getApp().globalData.openid,
-          nickName: e.detail.userInfo.nickName,
-          avatarUrl: e.detail.userInfo.avatarUrl,
-          province: e.detail.userInfo.province,
-          city: e.detail.userInfo.city
-        }, 
-        header: {
-          'content-type' : 'application/json'
+    var userInfoStorage = wx.getStorageSync('user');
+    //如果缓存中有用户信息，那么就跳转到首页，不跳转到登录界面
+    if (userInfoStorage) {
+      wx.switchTab({
+        url: '/pages/index/index',
+        success: function () {
+          console.log("跳转到首页 success")
         },
-        success: res => {
-          // 从数据库获取用户信息 
-          that.queryUserInfo();
-          console.log("插入小程序登陆用户信息成功！");
+        fail: function () {
+          console.log("跳转到首页 failed")
+        },
+        complete: function () {
+          console.log("跳转到首页 complete")
         }
       });
-      //授权成功后，跳转进入小程序首页
-      wx.switchTab({
-        url: '../index/index',
-      })
-    } else {
-      wx.showModal({
-        title: '警告',
-        content: '您点击了拒绝授权，将无法将入小程序，请授权之后再进入',
-        showCancel:false,
-        confirmText:'返回授权',
-        success:function(res) {
-          if(res.confirm) {
-            console.log('用户点击了返回授权')
-          }
+    }
+
+  },
+
+  /**
+ * 判断是否已经授权登录，
+ * 如果已经授权了，event.detail.errMsg的值为getUserInfo:ok
+ */
+  getUserInfomation: function (event) {
+    console.log("是否已经获取过用户的信息"+event.detail.errMsg);
+    
+    //如果已经授权了，则跳转到首页
+    if (event.detail.errMsg === 'getUserInfo:ok') {
+      this._getUserInfo(event.detail);
+      
+      this.toIndex();
+    }
+    else{
+
+    }
+    
+   
+  },
+
+  /**
+   * 获取用户信息
+   */
+  _getUserInfo: function (detail) {
+    console.log('执行获取用户信息');
+    var userInfoStorage = wx.getStorageSync('user');
+    //如果缓存中没有用户信息，那么就获取用户信息
+    if (!userInfoStorage) {
+      
+      var that = this;
+      wx.login({
+
+        success: function (res) {
+          //发送请求，通过code、appid、secret获取用户的openID
+          wx.request({
+            url: 'https://api.weixin.qq.com/sns/jscode2session',
+            data: {
+              // 小程序唯一标示
+              appid: 'wxcaa41659592b4bf3',
+              // 小程序的 app secret
+              secret: '38f418d56d2b001f20eee3491ed9f93d',
+              grant_type: 'authorization_code',
+              js_code: res.code
+            },
+            method: 'GET',
+            header: { 'content-type': 'application/json' },
+            success: function (openIdRes) {
+              // 获取到 openId,赋值到全局变量openID
+              app.globalData.opennID = openIdRes.data.openid;
+              console.log("openID2:" + app.globalData.opennID);
+
+              //根据openID去判断该用户信息是否在数据库中
+              const db = wx.cloud.database();
+              db.collection('user').where({
+                _openid: app.globalData.opennID
+              }).get({
+                success(dbres) {
+                  // res.data 是包含以上定义的两条记录的数组
+                  console.log(dbres.data.length == 0)
+                  //如果数据库中还没有该用户openID,则保存到数据库中
+                  if (dbres.data.length == 0){
+                    db.collection('user').add({
+                      // data 字段表示需新增的 JSON 数据
+                      data: {
+                        openid: app.globalData.openID,
+                        nickName: detail.userInfo.nickName,
+                        avatarUrl: detail.userInfo.avatarUrl,
+                        province: detail.userInfo.province,
+                        city: detail.userInfo.city
+                        
+                      },
+                      success(res) {
+                        // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
+                        console.log("用户ID："+res._id)
+                      }
+                    })
+                  }
+                }
+              })
+            }
+          })
+          
+          //将用户的基本信息保存到缓存中
+          wx.setStorageSync('user', detail.userInfo)
         }
       })
     }
-  },
- //获取用户信息接口
-  queryUsreInfo: function () {
-    wx.request({
-      url: getApp().globalData.urlPath + 'hstc_interface/queryByOpenid',
-      data: {
-        openid: getApp().globalData.openid
-      },
-      header: {
-        'content-type': 'application/json'
-      },
-      success: function (res) {
-        console.log(res.data);
-        getApp().globalData.userInfo = res.data;
-      }
-    }) 
+    else {
+      //如果缓存中已经存在用户的基本信息，那么将信息保存到全局变量中
+      
+    }
   },
 
+  /**
+   * 跳转到首页
+   */
+  toIndex:function(event){
+    wx.switchTab({
+      url: '/pages/index/index',
+      success: function () {
+        console.log("jump success")
+      },
+      fail: function () {
+        console.log("jump failed")
+      },
+      complete: function () {
+        console.log("jump complete")
+      }
+    });
+  },
+  
+  
 
 
   /**
