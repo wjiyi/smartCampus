@@ -1,7 +1,7 @@
 <!--pages/helpAdd/helpAdd.wxml-->
 <!-- 编辑帮忙信息页面 -->
 <view class='page'>
-  <textarea class='text' bindinput="input" placeholder="这一刻的想法..." auto-height/>
+  <textarea class='text' bindinput='bindTextAreaInput' value='{{comment}}' placeholder="这一刻的想法..." auto-height/>
   <view class="image_content">
     <view class='image' wx:for="{{img_url}}">
       <image class="moment_img" src="{{item}}"></image>
@@ -11,8 +11,14 @@
     </view>
   </view>
   <view class='help_label'>
-    <view class="catalog_name">标签
-   </view>
+    <view class="catalog_name">
+      <text>标签</text>
+      <view class='tags'>
+        <block wx:for="{{tags}}">
+          <text data-tag="{{item}}" bindtap='selectTag' class='{{currentTag === item?"active":""}}'>{{item}}</text>
+        </block>
+      </view>
+    </view>
   </view>
-  <button bindtap="send" type='primary' class='sendButton'>发布</button>
+  <button bindtap="send" type='primary' class='sendButton' open-type='getUserInfo'>发布</button>
 </view>

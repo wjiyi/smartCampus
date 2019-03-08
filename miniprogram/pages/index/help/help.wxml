@@ -3,7 +3,7 @@
 <view class='help'>
   <view class="swiper-tab">
     <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">失物招领</view>
-    <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">借  书</view>
+    <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">借 书</view>
     <view class="swiper-tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">快递代拿</view>
     <view class="swiper-tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="clickTab">其他帮帮</view>
   </view>
@@ -11,10 +11,40 @@
     <image class='add_icon' src='/images/index/add.png'></image>
   </view>
 
-  <swiper current="{{currentTab}}" duration="300" bindchange="swiperTab" class='tabs_swiper'>
-  <swiper-item><view>失物招领</view></swiper-item>
-  <swiper-item><view>借书</view></swiper-item>
-  <swiper-item><view>快递代拿</view></swiper-item>
-  <swiper-item><view>其他帮帮</view></swiper-item>
+  <swiper current="{{currentTab}}" duration="300" bindchange="swiperTab" class='tabs_swiper' >
+    <swiper-item class="swiper-container" >
+      <scroll-view class='discovery-container' wx:for='{{dataList}}' wx:key='list' wx:for-item="item" enable-back-to-top="true">
+        <view class='discovery-title'>
+          <image class='discovery-avatar' src='{{item.avatarUrl}}'></image>
+          <view class='name-container'>
+            <text class='discovery-name'>{{item.nickname}}</text>
+            <text class='discovery-time'>{{item.time}}</text>
+          </view>
+        </view>
+        <view class='discovery-content'>
+          <text class='content-text'>{{item.comment}}</text>
+          <image class='content-image' src='{{item.img}}' ></image>
+        </view>
+        <view class='discovery-operation'>
+          <view class='comment'>
+            <image class='comment-img' src='/images/index/comment.png'></image>
+            <text class='comment-text'>12</text>
+          </view>
+          <view class='like'>
+            <image class='comment-img' src='/images/index/like.png' bindtap='changeImg'></image>
+            <text class='comment-text'>12</text>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <view>借书</view>
+    </swiper-item>
+    <swiper-item>
+      <view>快递代拿</view>
+    </swiper-item>
+    <swiper-item>
+      <view>其他帮帮</view>
+    </swiper-item>
   </swiper>
 </view>

@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    currentTab: 0
+    currentTab: 0,
+    dataList:[],
   },
 
   //滑动切换
@@ -38,7 +39,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this
+    const db = wx.cloud.database({});
+    const tables = db.collection("helpMessage");
+    tables.get({
+      success:res => {
+        this.setData({
+          dataList:res.data
+        })
 
+      }
+    })
+    
   },
 
   /**

@@ -56,7 +56,7 @@ swiper image{
   height: 200rpx;
   margin-top: 20rpx;
   margin-right: 20rpx;
-  border: 1px #dadada solid;
+  border-bottom: 1px #dadada solid;
 }
 
 .act-title{
@@ -72,8 +72,8 @@ swiper image{
 }
 
 .act-image{
-  width: 200rpx;
-  height: 200rpx;
+  width: 150rpx;
+  height: 150rpx;
   margin-right: 10rpx;
   justify-items: flex-end;
 }

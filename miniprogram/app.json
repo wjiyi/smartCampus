@@ -1,5 +1,6 @@
 {
   "pages": [
+    
     "pages/login/login",
     "pages/index/index/index",
     "pages/discovery/discovery/discovery",
@@ -41,5 +42,7 @@
       "selectedIconPath": "images/select-me.png"
     }
     ]
-  }
+  },
+  
+  "cloud":true
 }

@@ -72,6 +72,14 @@
       <image class='act-image' src='/images/post-4.jpg'></image>
     </view>
 
+    <view class='activity'>
+      <view class='act-title'>
+        <text>当开学遇上花马 | 花都摇滚马拉松邀请你来报名了</text>
+        <text class='act-time'>2019年2月3日 11:29</text>
+      </view>
+      <image class='act-image' src='/images/post-4.jpg'></image>
+    </view>
+
   </view>
     
 </view>
