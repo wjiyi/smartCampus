@@ -1,0 +1,34 @@
+<!--pages/index/school/school/school.wxml-->
+<view class='school-container'>
+  <view class='category-item' bindtap='goToBus'>
+    <view class='detail-item'>
+      <image src='/images/index/bus.png'></image>
+      <text>公交出行</text>
+      <view class='detail-item-btn'></view>
+    </view>
+  </view>
+<view class='category-item' bindtap='goToPhone'>
+    <view class='detail-item'>
+      <image src='/images/index/phone.png'></image>
+      <text>服务电话</text>
+      <view class='detail-item-btn'></view>
+    </view>
+  </view>
+
+  <view class='category-item'bindtap='goToLogistics'>
+    <view class='detail-item'>
+      <image src='/images/index/logistics.png'></image>
+      <text>后勤充值</text>
+      <view class='detail-item-btn'></view>
+    </view>
+  </view>
+
+  <view class='category-item' bindtap='goToHospital'>
+    <view class='detail-item'>
+      <image src='/images/index/hospital.png'></image>
+      <text>医疗指引</text>
+      <view class='detail-item-btn'></view>
+    </view>
+  </view>
+
+</view>

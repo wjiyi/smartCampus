@@ -1,0 +1,9 @@
+/* pages/index/more/more.wxss */
+.more-container{
+  background-color: #efeff4;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  text-align: center;
+  line-height: 100vh;
+}

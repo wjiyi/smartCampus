@@ -1,0 +1,118 @@
+<!--pages/index/school/bus/bus.wxml-->
+<view class='bus-container'>
+  <view class='bus'>
+    <text class='bus-name'>712路</text>
+    <view class='bus-time'>
+      <text class='name'>华广发车:</text>
+      <text> 首班：07:00 末班：18:00</text>
+    </view>
+    <view class='bus-time'>
+      <text class='name'>白云文化广场发车:</text>
+    </view>
+    <text>首班：09:00 末班：20:00</text>
+    <view class='bus-time'>
+      <text class='name'>发车间隔:</text> 
+    </view>
+    <text> 高峰期 上午 07:00-08:00 下午 17:00-18:00 15分钟一班</text>
+    <view class='bus-time'>
+      <text class='name'>全程票价:</text>
+      <text> 3元</text>
+    </view>
+  </view>
+
+  <view class='bus'>
+    <text class='bus-name'>712A路</text>
+    <view class='bus-time'>
+      <text class='name'>华广发车:</text>
+      <text> 首班：06:00 末班：20:00</text>
+    </view>
+     <view class='bus-time'>
+      <text class='name'>人和发车:</text>
+      <text> 首班：07:00 末班：21:00</text>
+    </view>
+    <view class='bus-time'>
+      <text class='name'>发车间隔:</text>
+    </view>
+     <text> 高峰期 上午 07：00-09:00 下午 17:00-19:00 15分钟一班</text>
+    <view class='bus-time'>
+      <text class='name'>其它时段:</text>
+      <text> 20分钟一班</text>
+    </view>
+    <view class='bus-time'>
+      <text class='name'>全程票价:</text>
+      <text> 2元</text>
+    </view>
+  </view>
+
+  <view class='bus'>
+    <text class='bus-name'>花10路</text>
+   <view class='bus-time'>
+      <text class='name'>华广发车:</text>
+      <text> 首班：06:30 末班：21:30</text>
+    </view>
+     <view class='bus-time'>
+      <text class='name'>城东发车:</text>
+      <text> 首班：06:30 末班：21:30</text>
+    </view>
+    <view class='bus-time'>
+      <text class='name'>发车间隔:</text>
+      <text> 15分钟一班</text>
+    </view>
+    <view class='bus-time'>
+      <text class='name'>全程票价:</text>
+      <text> 2元</text>
+    </view>
+  </view>
+
+  <view class='bus'>
+    <text class='bus-name'>花30路</text>
+    <view class='bus-time'>
+      <text class='name'>华广发车:</text>
+      <text> 首班：07:00 末班：19:00</text>
+    </view>
+     <view class='bus-time'>
+      <text class='name'>东莞村发车:</text>
+      <text> 首班：07:00 末班：19:00</text>
+    </view>
+    <view class='bus-time'>
+      <text class='name'>发车间隔:</text>
+    </view>
+    <text>7:00-17:00整点发车，17:30发车，最后一班19:00</text>
+     <view class='bus-time'>
+      <text class='name'>全程票价:</text>
+      <text> 2元</text>
+    </view>
+  </view>
+
+  <view class='bus'>
+    <text class='bus-name'>花7路</text>
+    <view class='bus-time'>
+      <text class='name'>华广发车:</text>
+      <text> 首班：06:30 末班：21:30</text>
+    </view>
+    <view class='bus-time'>
+      <text class='name'>汽车站发车:</text>
+      <text> 首班：06:30 末班：21:30</text>
+    </view>
+    <view class='bus-time'>
+      <text class='name'>发车间隔:</text>
+      <text> 高峰期 15分钟一班</text>
+    </view>
+    <view class='bus-time'>
+      <text class='name'>其他时段:</text>
+      <text> 20分钟一班</text>
+    </view>
+    <view class='bus-time'>
+      <text class='name'>全程票价:</text>
+      <text> 2元</text>
+    </view>
+  </view>
+
+  <view class='bus'>
+    <text>9号线 花都广场站（校门口花7、花30路直达）</text>
+    <text>9号线 广州北站（校门口花10路直达）</text>
+    <text>3号线 人和站（校门口712A路直达）</text>
+    <text>2号线 白云文化广场站（校门口712路直达）</text>
+  </view>
+
+</view>

@@ -12,7 +12,37 @@ Page({
 
   goToHelp:function(){
     wx.navigateTo({
-      url: '/pages/index/help/help',
+      url: '/pages/index/help/help/help',
+    })
+  },
+
+  goToInformation:function(){
+    wx.navigateTo({
+      url: '/pages/index/information/information/information',
+    })
+  },
+
+  goToSecond:function(){
+    wx.navigateTo({
+      url: '/pages/index/second/second/second',
+    })
+  },
+
+  goToCorporation:function(){
+    wx.navigateTo({
+      url: '/pages/index/corporation/corporation/corporation',
+    })
+  },
+
+  goToSchool:function(){
+    wx.navigateTo({
+      url: '/pages/index/school/school/school',
+    })
+  },
+
+  goToMore:function(){
+    wx.navigateTo({
+      url: '/pages/index/more/more',
     })
   },
 

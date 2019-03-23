@@ -7,7 +7,7 @@ Page({
    */
   data: {
     //判断小程序的API，回调，参数，组件等是否在当前版本可用。
-    canIUse:wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
 
   /**
@@ -39,19 +39,19 @@ Page({
  * 如果已经授权了，event.detail.errMsg的值为getUserInfo:ok
  */
   getUserInfomation: function (event) {
-    console.log("是否已经获取过用户的信息"+event.detail.errMsg);
-    
+    console.log("是否已经获取过用户的信息" + event.detail.errMsg);
+
     //如果已经授权了，则跳转到首页
     if (event.detail.errMsg === 'getUserInfo:ok') {
       this._getUserInfo(event.detail);
-      
+
       this.toIndex();
     }
-    else{
+    else {
 
     }
-    
-   
+
+
   },
 
   /**
@@ -92,19 +92,19 @@ Page({
             }
           })
         }
-      })   
+      })
       //将用户的基本信息保存到缓存中
       wx.setStorageSync('user', detail.userInfo);
     }
     else {
-      
+
     }
   },
 
   /**
    * 跳转到首页
    */
-  toIndex:function(event){
+  toIndex: function (event) {
     wx.switchTab({
       url: '/pages/index/index/index',
       success: function () {
@@ -118,56 +118,56 @@ Page({
       }
     });
   },
-  
-  
+
+
 
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    
+
   }
 })

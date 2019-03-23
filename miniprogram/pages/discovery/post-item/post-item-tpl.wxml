@@ -1,0 +1,42 @@
+<!-- 文章列表模板 -->
+<template name='postItemTpl'>
+  <view class='post-container'>
+
+    <view class='head-container'>
+      <image class='discovery-avatar' src='{{avatarUrl}}'></image>
+      <view class='name-container'>
+        <text class='discovery-name'>{{nickName}}</text>
+        <text class='discovery-time'>{{date}}</text>
+      </view>
+    </view>
+
+    <view class='discovery-content'>
+      <text >{{content}}</text>
+    </view>
+
+    <!-- 图片显示 -->
+    <view class="send-more-result-main">
+      <block wx:for="{{imageList}}" wx:for-item="item2" wx:for-index="imgIdx" wx:key='imageList'>
+        <!--如果删除其中一个，则对其添加deleting 样式；-->
+        <view class="file-box">
+          <view class="img-box">
+            <image src="{{item2.tempFileURL}}" mode="aspectFill" catchtap='previewImg' data-post-index='{{idx}}'  data-img-index='{{imgIdx}}'></image> 
+            
+          </view>
+        </view>
+      </block>
+    </view>
+
+    
+    <button class='commentBtn' catchtap='showInput' data-post-id='{{_id}}'>评论</button>
+    
+    <!-- 评论内容 -->
+    <view class='comment'>
+      <block wx:for="{{comment}}" wx:for-item="item2" wx:for-index="idx" wx:key='comment'>
+        <text>{{item2.nickName}}  :  {{item2.commentInput}}\n</text>
+      </block>
+    </view>
+  
+  </view>
+
+</template>

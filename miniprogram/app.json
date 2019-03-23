@@ -1,14 +1,26 @@
 {
   "pages": [
+    
     "pages/login/login",
     "pages/index/index/index",
     "pages/discovery/discovery/discovery",
     "pages/me/me/me",
     "pages/discovery/add/add",
     "pages/me/myDynamic/myDynamic",
-    "pages/me/information/information",
-    "pages/index/help/help",
-    "pages/index/helpAdd/helpAdd"
+    "pages/me/device/device",
+    "pages/index/help/helpAdd/helpAdd",
+    "pages/index/school/school/school",
+    "pages/index/school/bus/bus",
+    "pages/index/school/phone/phone",
+    "pages/index/school/logistics/logistics",
+    "pages/index/school/hospital/hospital",
+    "pages/index/more/more",
+    "pages/index/help/help/help",
+    "pages/index/second/second/second",
+    "pages/index/corporation/corporation/corporation",
+    "pages/index/second/goodsAdd/goodsAdd",
+    "pages/index/information/information/information"
+    
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -41,5 +53,7 @@
       "selectedIconPath": "images/select-me.png"
     }
     ]
-  }
+  },
+  
+  "cloud":true
 }

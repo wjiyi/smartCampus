@@ -1,14 +1,26 @@
 <!--pages/add/add.wxml-->
 <!-- 编辑动态页面 -->
 <view class='page'>
-  <textarea class='text' bindinput="input" placeholder="这一刻的想法..." auto-height/>
+  <textarea class='text' bindinput="contentInput" placeholder="这一刻的想法..." auto-height/>
   <view class="image_content">
-    <view class='image' wx:for="{{img_url}}">
-      <image class="moment_img" src="{{item}}"></image>
+
+    <!--显示选择的图片-->
+    <view class="send-more-result-main">
+      <block wx:for="{{chooseFiles}}" wx:for-index="idx" wx:key='chooseFiles'>
+
+        <!--如果删除其中一个，则对其添加deleting 样式；-->
+        <view class="file-box {{deleteIndex==idx?'deleting':''}}">
+          <view class="img-box">
+            <image src="{{item}}" mode="aspectFill"></image>
+            <icon class="remove-icon" type="cancel" size="23" color="#B2B2B2" catchtap="deleteImage" data-idx="{{idx}}" />
+          </view>
+        </view>
+      </block>
     </view>
-    <view class='image' style='display:{{hideAdd?"none":"block"}}'>
-      <image bindtap="chooseimage" class="moment_img" src='/images/discovery/add2.png'></image>
+
+    <view class='image' hidden="{{chooseFiles.length==3}}">
+      <image bindtap="chooseImage" class="moment_img" src='/images/discovery/add2.png'></image>
     </view>
   </view>
-  <button bindtap="send" type='primary' class='sendButton'>发布</button>
+  <button bindtap="addPost" type='primary' class='sendButton'>发布</button>
 </view>

@@ -1,0 +1,32 @@
+<!-- 系统信息界面 -->
+
+<view class='container'>
+
+  <view class='category-item'>
+    <block wx:for='{{phoneInfo}}' wx:key='phoneInfos'>
+      <view class='detail-item'>
+        <text>{{item.key}}</text>
+        <text>{{item.val}}</text>
+      </view>
+    </block>
+  </view>
+
+  <view class='category-item'>
+    <block wx:for='{{softInfo}}' wx:key='softInfos'>
+      <view class='detail-item'>
+        <text>{{item.key}}</text>
+        <text>{{item.val}}</text>
+      </view>
+    </block>
+  </view>
+
+  <view class='category-item'>
+    <block wx:for='{{screenInfo}}' wx:key='screenInfos'>
+      <view class='detail-item'>
+        <text>{{item.key}}</text>
+        <text>{{item.val}}</text>
+      </view>
+    </block>
+  </view>
+
+</view>

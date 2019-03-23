@@ -1,10 +1,10 @@
 //app.js
 App({
   onLaunch: function () {
-    
+
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
-    } 
+    }
     else {
       //云开发初始化
       wx.cloud.init({
@@ -18,12 +18,13 @@ App({
 
   // 获取用户openid
   getOpenid() {
+    var that = this;
     wx.cloud.callFunction({
       // 云函数名称
       name: 'getOpenid',
       success(res) {
         console.log('云函数获取到的openid: ', res.result.openId);
-        this.openid = res.result.openId;
+        that.globalData.openid = res.result.openId;
       },
       fail: console.error
     })
@@ -32,8 +33,8 @@ App({
   /**
      * 全局变量
      */
-    globalData: {
-    //openid
-    openid: null
+  globalData: {
+
+    openid: ""
   }
 })

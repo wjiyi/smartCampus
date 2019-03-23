@@ -1,0 +1,44 @@
+<!--pages/index/corporation/corporation/corporation.wxml-->
+<view class='corporation-container'>
+  <view class="swiper-tab">
+    <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">校级组织</view>
+    <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">社团</view>
+  </view>
+  <swiper current="{{currentTab}}" duration="300" bindchange="swiperTab" class='tabs_swiper'>
+    <swiper-item class="swiper-container">
+      <block>
+        <view class='category-item' wx:for="{{organizationList}}" wx:for-item="item" wx:for-index="idx" >
+          <view class='detail-item'>
+            <image src='{{item.image}}'></image>
+            <text>{{item.name}}</text>
+          </view>
+        </view>
+      </block>
+    </swiper-item>
+
+    <swiper-item class="swiper-container">
+      <block>
+
+        <view class='help_label'>
+          <view class="catalog_name">
+            <view class='tags'>
+              <block wx:for="{{tags}}">
+                <text data-tag="{{item}}" bindtap='selectTag' class='{{currentTag === item?"active":""}}'>{{item}}</text>
+              </block>
+            </view>
+          </view>
+        </view>
+
+        <view class='category-item' wx:for="{{corporationList}}" wx:for-item="item" wx:for-index="idx" >
+          <view class='detail-item'>
+            <image src='{{item.image}}'></image>
+            <text>{{item.name}}</text>
+          </view>
+        </view>
+
+      </block>
+    </swiper-item>
+
+  </swiper>
+
+</view>

@@ -1,0 +1,54 @@
+<!--pages/index/school/phone/phone.wxml-->
+<view class='phone-container'>
+  <view class='phone'>
+    <text>饮水机维修：13725130758</text>
+  </view>
+  <view class='phone'>
+    <text>下水道维修：13926449993</text>
+  </view>
+  <view class='phone'>
+    <text>空调维修：13416156577/616577</text>
+  </view>
+  <view class='phone'>
+    <text>水表（新表）维修：13922114124王师傅</text>
+  </view>
+  <view class='phone'>
+    <text>学生处维修部：36903185，地点：C9一楼</text>
+  </view>
+  <view class='phone'>
+    <text>后勤维修部：36903189，地点：学生宿舍C5栋一楼</text>
+  </view>
+  <view class='phone'>
+    <text>热水维修：13556073926/663926 卢师傅，676685李师傅</text>
+  </view>
+  <view class='phone'>
+    <text>一饭：投诉电话（林主管)：134 2208 5838</text>
+  </view>
+  <view class='phone'>
+    <text>二饭：投诉电话（郑主管)：136 7898 8159</text>
+  </view>
+  <view class='phone'>
+    <text>三饭：投诉电话（孙主管)：159 4495 1933</text>
+  </view>
+  <view class='phone'>
+    <text>四饭：投诉电话（付经理)：138 2613 4183</text>
+  </view>
+   <view class='phone'>
+    <text>壹心汉堡：664385</text>
+  </view>
+   <view class='phone'>
+    <text>递易智能柜：圆通、申通、中通、汇通、快捷）188 2624 1910</text>
+  </view>
+   <view class='phone'>
+    <text>韵达快递：188 0200 4426 / 188 2625 8736</text>
+  </view>
+   <view class='phone'>
+    <text>天天快递：137 1123 1558</text>
+  </view>
+  <view class='phone'>
+    <text>教务处：3690 3022/3690 3024</text>
+  </view>
+  <view class='phone'>
+    <text>学生工作处：3690 3233</text>
+  </view>
+</view>

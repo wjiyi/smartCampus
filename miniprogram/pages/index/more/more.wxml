@@ -1,0 +1,4 @@
+<!--pages/index/more/more.wxml-->
+<view  class='more-container'>
+<text>已经很努力更新啦，敬请期待哦~</text>
+</view>

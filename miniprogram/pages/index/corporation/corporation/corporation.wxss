@@ -1,0 +1,81 @@
+  /* pages/index/corporation/corporation/corporation.wxss */
+
+.swiper-tab {
+  width: 100%;
+  text-align: center;
+  height: 88rpx;
+  line-height: 88rpx;
+  display: flex;
+  flex-flow: row;
+}
+
+
+.swiper-tab-item {
+  width: 50%;
+  color: #434343;
+  font-size: 35rpx;
+}
+
+.active {
+  color: #f89422;
+  border-bottom: 4rpx solid #f2f2f2;
+}
+
+.tabs_swiper {
+  margin-top: 10px;
+  width: 100%;
+  height: 100vh;
+}
+
+.swiper-container{
+  overflow-y: scroll;
+}
+
+.tags{
+  display: flex;
+  display: -webkit-flex;
+  margin-top: 10rpx;
+}
+.tags text{
+  display: block;
+  padding: 4rpx 20rpx;
+  background-color: #f2f2f2;
+  color:#333;
+  border-radius: 10rpx;
+  font-size: 16rpx;
+  margin-left: 10rpx;
+}
+.tags .active{
+  background-color: #fda23b !important; 
+}
+
+.category-item {
+    width: 100%;
+    margin: 15rpx 0;
+    border-top: 1rpx solid #d9d9d9;
+    border-bottom: 1rpx solid #d9d9d9;
+    background-color: #fff;
+}
+
+.detail-item{
+    display: flex;
+    margin-left: 30rpx;
+    border-bottom: 1px solid RGBA(217, 217, 217, .4);
+    height:100rpx;
+    align-items: center;
+}
+.detail-item:last-child{
+    border-bottom:none;
+}
+.detail-item image{
+    height: 80rpx;
+    width:80rpx;
+
+}
+
+.detail-item text{
+    color:#7F8389;
+    font-size:28rpx;
+    flex:1;
+    margin-left: 30rpx;
+}

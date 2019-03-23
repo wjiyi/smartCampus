@@ -8,19 +8,6 @@ Page({
 
   },
 
-  goToInformation: function () {
-    wx.navigateTo({
-      url: '/pages/me/information/information',
-    })
-  },
-
-
-  goToMyDynamic: function () {
-    wx.navigateTo({
-      url: '/pages/me/myDynamic/myDynamic',
-    })
-  },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -33,6 +20,32 @@ Page({
         userInfo: userInfoStorage
       })
     }
+  },
+
+  /**
+   * 跳转到我的动态界面
+   */
+  goToMyDynamic: function () {
+    wx.navigateTo({
+      url: '/pages/me/myDynamic/myDynamic',
+    })
+  },
+  /**
+   * 跳转到我的帮帮界面
+   */
+  goToMyHelp:function(){
+    wx.navigateTo({
+      url: '/pages/me/myHelp/myHelp',
+    })
+  },
+
+  /**
+   * 跳转到获取系统信息的界面
+   */
+  showSystemInfo: function () {
+    wx.navigateTo({
+      url: '../device/device',
+    });
   },
 
   /**

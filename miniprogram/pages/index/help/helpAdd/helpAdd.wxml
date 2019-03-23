@@ -1,0 +1,39 @@
+<!--pages/helpAdd/helpAdd.wxml-->
+<!-- 编辑帮忙信息页面 -->
+<view class='page'>
+  <textarea class='text' bindinput='bindTextAreaInput' value='{{comment}}' placeholder="这一刻的想法..." auto-height/>
+
+  <view class="image_content">
+
+    <!--显示选择的图片-->
+    <view class="send-more-result-main">
+      <block wx:for="{{chooseFiles}}" wx:for-index="idx" wx:key='chooseFiles'>
+
+        <!--如果删除其中一个，则对其添加deleting 样式；-->
+        <view class="file-box {{deleteIndex==idx?'deleting':''}}">
+          <view class="img-box">
+            <image src="{{item}}" mode="aspectFill"></image>
+            <icon class="remove-icon" type="cancel" size="23" color="#B2B2B2" catchtap="deleteImage" data-idx="{{idx}}" />
+          </view>
+        </view>
+      </block>
+    </view>
+
+    <view class='image' hidden="{{chooseFiles.length==3}}">
+      <image bindtap="chooseImage" class="moment_img" src='/images/discovery/add2.png'></image>
+    </view>
+  </view>
+
+
+  <view class='help_label'>
+    <view class="catalog_name">
+      <text>标签</text>
+      <view class='tags'>
+        <block wx:for="{{tags}}">
+          <text data-tag="{{item}}" bindtap='selectTag' class='{{currentTag === item?"active":""}}'>{{item}}</text>
+        </block>
+      </view>
+    </view>
+  </view>
+  <button bindtap="send" type='primary' class='sendButton' open-type='getUserInfo'>发布</button>
+</view>

@@ -1,0 +1,36 @@
+<!--pages/index/second/second.wxml-->
+<view class='second-container'>
+  <view class='goodsList' wx:for="{{goodsList}}" wx:for-item="item" wx:for-index="postIdx" wx:key="goodsList" >
+    <view class='goodsCard' bindtap='goToGoodsDetails' data-post-index="{{postIdx}}">
+      <view class='header'>
+        <image class='avatar' src='{{item.avatarUrl}}' mode='aspectFill'></image>
+      </view>
+      <view class='content'>
+        <text class='nickname'>{{item.nickName}}</text>
+        <text class='goods-name'>{{item.goodName}}</text>
+        <text class='goods-describe'>{{item.content}}</text>
+
+        <view class="image-container">
+          <block wx:for="{{item.imageList}}" wx:for-item="item2" wx:for-index="idx" wx:key="idx">
+            <image class='images-style' src='{{item2.tempFileURL}}' catchtap='previewImg' data-index="{{postIdx}}" data-img-index="{{idx}}"></image>
+          </block>
+        </view>
+      </view>
+
+    </view>
+    <view class='goods-opration'>
+    <view class='goods-time'>
+    <text class='time-text'>{{item.date}}</text>
+    </view>
+    <view class='goods-look'>
+    <image class='look-image' src='/images/index/eye.png'></image>
+    <text class='look-text'>{{item.lookNum}}</text>
+    </view>
+    </view>
+  </view>
+
+  <view>
+    <image class='add_icon' src='/images/discovery/add.png' bindtap='goToGoodsAdd'></image>
+  </view>
+
+</view>

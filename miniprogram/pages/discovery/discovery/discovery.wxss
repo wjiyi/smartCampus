@@ -1,79 +1,56 @@
 /* pages/discovery/discovery.wxss */
-.discovery-container{
-  width: 100%;
-}
-.discovery-title {
-  display: flex;
-  flex-direction: row;
-  margin-left: 20rpx;
-}
+@import "../post-item/post-item-tpl.wxss";
 
-.discovery-avatar{
-  width: 100rpx;
-  height: 100rpx;
-  border-radius: 50rpx;
-}
-
-.name-container{
-  display: flex;
-  flex-direction: column;
-  margin-left: 20rpx;
-}
-
-.discovery-time{
-  color: #8d8d8d;
-  font-size: 20rpx;
-  margin-top: 15rpx;
-}
-
-.discovery-content{
-  margin-top: 10rpx;
-  margin-left: 20rpx;
-}
-
-.content-image{
-  margin-top:10rpx;
-}
-
-.discovery-operation{
-  display: flex;
-  flex-direction: row;
-  height: 70rpx;
-  margin-top: 20rpx;
-  border: 1px #dadada solid;
-}
-
-.comment{
-  display: flex;
-  flex-direction: row;
-  flex: 1;
-  border-right: 1px #dadada solid;
-  justify-content: center;
-  align-items: center;
-}
-
-.comment-img{
-  width: 50rpx;
-  height: 50rpx;
-  margin-left: 10rpx;
-}
-
-.comment-text{
-  margin-left: 15rpx;
-}
-
-.like{
-  display: flex;
-  flex-direction: row;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
+.header{
+  width:100%;
+  height:400rpx;
 }
 
 .add_icon{
-  position: fixed;
+  position: absolute;
   width: 100rpx;
   height: 100rpx;
-  bottom: 30rpx;
-  right: 40rpx;
+  top: 20rpx;
+  right: 20rpx;
+}
+
+.input-box{
+  position: fixed;
+  bottom: 0;
+  left:0;
+  right: 0;
+  background-color: #EAE8E8;
+  border-top:1rpx solid #D5D5D5;
+  height: 100rpx;
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+}
+
+.input{
+    border: 1rpx solid #D5D5D5;
+    background-color: #fff;
+    border-radius: 3px;
+    height: 80rpx;
+    width: 390rpx;
+    margin:10rpx 25rpx 10rpx 75rpx ;
+    font-size: 24rpx;
+    color: #838383;
+    padding: 0 2%;
+}
+
+.submit-btn{
+    font-size: 28rpx;
+    margin-top: 14rpx;
+    margin-right: 18rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    width: 120rpx;
+    
+    background-color: #4A6141;
+    border-radius:5rpx;
+    color: #fff;
+    text-align: center;
+    
+    font-family:Microsoft Yahei;
 }
