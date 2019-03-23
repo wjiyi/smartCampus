@@ -1,0 +1,45 @@
+<!--pages/index/school/hospital/hospital.wxml-->
+<view class='hospital-container'>
+  <view class='hospital'>
+    <text class='text-style'>开诊时间</text>
+    <text>工作日： 08：40-12:00 14:30-21:00</text>
+    <text>周末及节假日：08:40-12:00 14:30-18:00</text>
+    <text>其余时间，值班人员负责突发事件的处理、急危病人的救治和转诊</text>
+    <text>学校卫生所急救电话：020-36903191</text>
+  </view>
+  <view class='hospital'>
+    <text class='text-style'>门诊医保报销所需资料</text>
+    <text>1.审核单 (填写《参保学生医疗费报销审核单》一张)</text>
+    <text>2.正式发票原件 (如有几张发票，按日期顺序粘贴在一张A4纸上)</text>
+    <text>3.费用明细清单 (如有几张门诊医疗费用明细清单，按日期顺序粘贴在一张A4纸上)</text>
+    <text>4.病历复印件 (只需复印与发票相对应的就诊医疗机构门诊病历页，并出示原件)</text>
+    <text>5.学生证复印件 (复印第一页和注册页，并出示原件)</text>
+    <text>6.医保卡复印件 (正反两面复印件，并出示原件)</text>
+    <text>7.转诊单 (由卫生所同意转诊开的转诊单)</text>
+  </view>
+
+  <view class='hospital'>
+    <text class='text-style'>注意</text>
+    <text>1）【审核单】可在卫生所领取或进入学校官网 》 后勤处 》 医疗保健
+http://hg.gcu.edu.cn/8s/Medical</text>
+    <text>2. 【门诊医疗费用明细清单】在就诊的医院打印并盖章。</text>
+    <text>3. 请备齐以上资料资料，资料不全者，不予接收。</text>
+    <text>4. 每周二、周四下午14:15~17:15，交资料到卫生所102室。</text>
+  </view>
+
+  <view class='hospital'>
+    <text class='text-style'>住院医保报销所需资料</text>
+    <text>1、 参保人医保卡正反面复印件</text>
+    <text>2、 参保人身份证和户口本复印件</text>
+    <text>3、 出院小结复印件</text>
+    <text>4、 出院诊断证明书复印件</text>
+    <text>5、 住院明细清单(医院盖章，汇总分类打印)</text>
+    <text>6、 发票原件(或广东省医疗收费票据)</text>
+    <text>7、 住院病案首页或入院记录复印件(此复印件需回就诊医院申请复印， 需盖病历管理章或医院公章)</text>
+    <text>8、 个人申请</text>
+    <text>9、 学校证明</text>
+    <text>10、 填写学校审核单一张</text>
+    <text>11、 代办人身份证复印件(无需本人准备)</text>
+  </view>
+
+</view>

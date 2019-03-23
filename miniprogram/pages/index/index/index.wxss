@@ -1,4 +1,7 @@
 /**index.wxss**/
+.container{
+  background-color: #efeff4;
+}
 swiper{
   width:100%;
   height:400rpx;

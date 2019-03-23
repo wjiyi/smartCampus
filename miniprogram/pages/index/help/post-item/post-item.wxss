@@ -1,0 +1,96 @@
+.post-container{
+  flex-direction: column;
+  display: flex;
+  margin: 30rpx 0;
+  width: 100%;
+  background-color: #fff;
+  padding-bottom: 5px;
+  border-bottom: 1px #dadada solid;
+}
+
+
+.head-container {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20rpx;
+  margin-bottom: 10px;
+}
+
+.discovery-avatar{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+}
+
+.name-container{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+}
+
+.discovery-time{
+  color: #8d8d8d;
+  font-size: 20rpx;
+  margin-top: 15rpx;
+}
+
+.discovery-content{
+  color: #666;
+  font-size: 32rpx;
+  margin-bottom: 20rpx;
+  margin-left: 100rpx;
+  margin-right: 70rpx;
+  letter-spacing: 2rpx;
+  line-height: 40rpx;
+}
+
+.commentBtn{
+  display: flex;
+  flex-direction: row;
+  width: 120rpx;
+  height: 60rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  font-size: 24rpx;
+  
+}
+
+/* 显示图片 */
+.send-more-result-main{
+    margin-top: 30rpx;
+    margin-left: 100rpx;
+}
+.send-more-result-main .file-box{
+    margin-right: 14rpx;
+    height: 150rpx;
+    width: 150rpx;
+    position: relative;
+    display: inline-block;
+}
+
+.send-more-result-main image{
+    height: 100%;
+    width: 100%;
+}
+
+.send-more-result-main .file-box .img-box {
+    height: 100%;
+    width: 100%;
+}
+
+/* 显示评论 */
+.comment{
+  margin-top: 30rpx;
+  margin-left: 100rpx;
+  margin-right: 15rpx;
+  margin-bottom: 25rpx;
+  background-color: #F7F7F9;
+}
+
+.comment text{
+  font-family:Microsoft Yahei;
+  color: #666;
+  font-size: 32rpx;
+  letter-spacing: 2rpx;
+}

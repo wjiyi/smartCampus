@@ -58,6 +58,18 @@
     width:50rpx;
 
 }
+ .button-type {
+    font-size:28rpx;
+    flex:1;
+    margin-left: 0rpx;
+    text-align: left;
+    color:#7F8389;
+    background-color: #fff;
+}
+button::after{
+  border: none;
+}
+
 .detail-item text{
     color:#7F8389;
     font-size:28rpx;

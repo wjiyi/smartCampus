@@ -11,7 +11,7 @@ Page({
     //选择的图片的临时URL
     chooseFiles: [],
     //文章内容
-    content: null,
+    content: "",
     //图片文件ID列表
     fileIDList: [],
   },
@@ -20,15 +20,16 @@ Page({
    * 发表文章
    */
   addPost: function (event) {
-    //如果输入框的值为空和没有图片，则直接返回
-    if (this.data.content == null && this.data.fileIDList.length == 0) {
-      return;
+    if (this.data.content === '') {
+      wx.showToast({
+        title: '内容不能为空',
+      })
+      return
     }
-
     //交互反馈
     wx.showToast({
       title: '发表成功',
-      duration: 2000,
+      duration: 1500,
       icon: "suceess",
       mask: true,
       success: function () {
@@ -38,7 +39,7 @@ Page({
           wx.switchTab({
             url: '../discovery/discovery'
           })
-        }, 2000) //延迟时间 
+        }, 1500) //延迟时间 
       }
     });
 
@@ -50,6 +51,7 @@ Page({
    */
   savePost: function () {
     console.log("将文章插入数据库");
+    console.log(this.data.fileIDList);
     var userInfoStorage = wx.getStorageSync('user');
     //将文章插入数据库
     const db = wx.cloud.database();
@@ -62,8 +64,7 @@ Page({
         date: util.formatTime(new Date(), "Y-M-D h:m:s"),
         content: this.data.content,
         imageList: this.data.fileIDList,
-        praiseNum: 0,
-        commentNum: 0
+        comment: []
       },
       success(res) {
         // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
@@ -104,27 +105,33 @@ Page({
         that.setData({
           chooseFiles: imgArr.concat(res.tempFilePaths)
         });
-        //图片临时路径
-        var tempPath = res.tempFilePaths[0];
-        //图片临时路径的长度
-        var tempPathLen = tempPath.length;
-        //截取临时路径后面一部分作为云存储的图片名字
-        var imagePath = tempPath.substring(tempPathLen - 16, tempPathLen);
-        // 将图片上传至云存储空间
-        wx.cloud.uploadFile({
-          // 指定上传到的云路径
-          cloudPath: 'post/' + imagePath,
-          // 指定要上传的文件的小程序临时文件路径
-          filePath: tempPath,
-          // 成功回调
-          success: function (res2) {
-            console.log('上传成功', res2.fileID);
-            that.setData({
-              fileIDList: imgIDArr.concat(res2.fileID)
-            })
 
-          },
-        })
+        //将选择的图片上传
+        for (var i = 0; i < res.tempFilePaths.length; i++) {
+
+          //图片临时路径
+          var tempPath = res.tempFilePaths[i];
+          //图片临时路径的长度
+          var tempPathLen = tempPath.length;
+          //截取临时路径后面一部分作为云存储的图片名字
+          var imagePath = tempPath.substring(tempPathLen - 16, tempPathLen);
+          // 将图片上传至云存储空间
+
+          wx.cloud.uploadFile({
+            // 指定上传到的云路径
+            cloudPath: 'post/' + imagePath,
+            // 指定要上传的文件的小程序临时文件路径
+            filePath: tempPath,
+            // 成功回调
+            success: function (res2) {
+              console.log('上传成功', res2.fileID);
+              that.setData({
+                fileIDList: that.data.fileIDList.concat(res2.fileID)
+              })
+
+            },
+          })
+        }
       },
     })
 

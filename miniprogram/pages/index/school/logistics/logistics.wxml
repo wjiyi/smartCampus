@@ -1,0 +1,26 @@
+<!--pages/index/school/logistics/logistics.wxml-->
+<view class='logistics-container'>
+  <view class='logistics'>
+    <text>A4结算中心</text>
+    <text class='text-style'>周一至周五</text>
+    <text>上午 8:40-12:30</text>
+    <text>下午 14:15-17:50</text>
+    <text class='text-style'>周六</text>
+    <text>上午 9:00-12:00</text>
+    <text>下午 休息</text>
+    <text class='text-style'>周日</text>
+    <text>全天休息</text>
+  </view>
+
+  <view class='logistics'>
+    <text>水电价格</text>
+    <text>冷水：2.77元/吨</text>
+    <text>热水：25元/吨</text>
+    <text>电：0.674元/度</text>
+ </view>
+<view class='logistics'>
+    <text>洗衣机申请</text>
+    <text>行政楼 302</text>
+ </view>
+
+</view>

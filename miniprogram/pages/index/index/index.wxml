@@ -16,10 +16,6 @@
   <view class="apps">
     <view class='row'>
       <view class='app'>
-        <image src='/images/index/school.png'></image>
-        <text>校园介绍</text>
-      </view>
-      <view class='app'>
         <image src='/images/index/system.png'></image>
         <text>教务系统</text>
       </view>
@@ -31,22 +27,27 @@
         <image src='/images/index/new.png'></image>
         <text>校园资讯</text>
       </view>
-    </view>
-
-    <view class='row'>
       <view class='app'>
         <image src='/images/index/corporation.png'></image>
         <text>社团组织</text>
       </view>
-      <view class='app'>
+    </view>
+
+    <view class='row'>
+      
+      <view class='app' bindtap='goToSecond'>
         <image src='/images/index/second.png'></image>
         <text>二手市场</text>
       </view>
-      <view class='app'>
+      <view class='app' bindtap='goToSchool'>
+        <image src='/images/index/school.png'></image>
+        <text>校园杂事</text>
+      </view>
+      <view class='app' bindtap='goToMore'>
         <image src='/images/index/more.png'></image>
         <text>敬请期待</text>
       </view>
-      <view class='app'>
+      <view class='app' bindtap='goToMore'>
         <image src='/images/index/more.png'></image>
         <text>敬请期待</text>
        </view>

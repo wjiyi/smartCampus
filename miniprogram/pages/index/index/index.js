@@ -12,7 +12,25 @@ Page({
 
   goToHelp:function(){
     wx.navigateTo({
-      url: '/pages/index/help/help',
+      url: '/pages/index/help/help/help',
+    })
+  },
+
+  goToSecond:function(){
+    wx.navigateTo({
+      url: '/pages/index/second/second/second',
+    })
+  },
+
+  goToSchool:function(){
+    wx.navigateTo({
+      url: '/pages/index/school/school/school',
+    })
+  },
+
+  goToMore:function(){
+    wx.navigateTo({
+      url: '/pages/index/more/more',
     })
   },
 

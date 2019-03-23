@@ -1,0 +1,37 @@
+<!--pages/index/second/goodsAdd/goodsAdd.wxml-->
+<!-- 编辑商品信息页面 -->
+<view class='page'>
+  <view>
+    <textarea class='text' bindinput="nameInput" placeholder="商品名字" auto-height/>
+  </view>
+  <view>
+    <textarea class='text desc-text' bindinput='contentInput' placeholder='商品描述'/>
+  </view>
+  <view>
+    <textarea class='text' bindinput='connentionInput' placeholder='联系人' auto-height/>
+  </view>
+  <view>
+    <textarea class='text' bindinput='phoneInput' type='number' placeholder='联系方式' auto-height/>
+  </view>
+  <view class="image_content">
+
+    <!--显示选择的图片-->
+    <view class="send-more-result-main">
+      <block wx:for="{{chooseFiles}}" wx:for-index="idx" wx:key='chooseFiles'>
+
+        <!--如果删除其中一个，则对其添加deleting 样式；-->
+        <view class="file-box {{deleteIndex==idx?'deleting':''}}">
+          <view class="img-box">
+            <image class='choose-img' src="{{item}}" mode="aspectFill"></image>
+            <icon class="remove-icon" type="cancel" size="23" color="#B2B2B2" catchtap="deleteImage" data-idx="{{idx}}" />
+          </view>
+        </view>
+      </block>
+      <view class='add-image' hidden="{{chooseFiles.length==9}}">
+      <image bindtap="chooseImage" class="moment_img" src='/images/discovery/add2.png'></image>
+    </view>
+    </view>
+    
+  </view>
+  <button bindtap="addPost" type='primary' class='sendButton'>发布</button>
+</view>

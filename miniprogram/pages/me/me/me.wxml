@@ -3,7 +3,7 @@
 <view class='container'>
 
   <!-- 个人信息界面 -->
-  <view class='category-item personal-info' bindtap='goToInformation'>
+  <view class='category-item personal-info'>
     
     <view class='user-avatar'> 
       <image src='{{userInfo.avatarUrl}}'></image>
@@ -16,13 +16,10 @@
         <text>所在地：{{userInfo.city}}</text>
       </view>
     </view>
-    <view class='detail-item' catchtap='goToMyDynamic'>
-      <view class='detail-item-btn'></view>
-    </view>
   </view>
 
   <view class='category-item'>
-      <view class='detail-item'>
+      <view class='detail-item' catchtap='goToMyDynamic'>
         <image src='/images/me/state.png'></image>
         <text>我的动态</text>
         <view class='detail-item-btn'></view>
@@ -38,15 +35,15 @@
   </view>
 
   <view class='category-item'>
-      <view class='detail-item' catchtap='goToMyDynamic'>
+      <view class='detail-item' open-type='feedback'>
         <image src='/images/me/suggestion.png'></image>
-        <text>意见反馈</text>
+        <button class='button-type' open-type='feedback'>意见反馈</button>
         <view class='detail-item-btn'></view>
       </view>
   </view>
 
   <view class='category-item'>
-      <view class='detail-item' catchtap='goToMyDynamic'>
+      <view class='detail-item'>
         <image src='/images/me/setting.png'></image>
         <text>设置</text>
         <view class='detail-item-btn'></view>
@@ -54,7 +51,7 @@
   </view>
 
   <view class='category-item'>
-      <view class='detail-item' catchtap='goToMyDynamic'>
+      <view class='detail-item'>
         <image src='/images/me/about.png'></image>
         <text>关于我们</text>
         <view class='detail-item-btn'></view>

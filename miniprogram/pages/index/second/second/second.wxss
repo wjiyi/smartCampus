@@ -1,0 +1,99 @@
+/* pages/index/second/second.wxss */
+
+.second-container {
+  background-color: #efeff4;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.goodsList{
+  width: 100%;
+  margin: 15rpx 0;
+  border-top: 1rpx solid #d9d9d9;
+  border-bottom: 1rpx solid #d9d9d9;
+  background-color: #fff;
+}
+
+.goodsCard{
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  padding: 10rpx 30rpx 0;
+}
+.avatar{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.nickname{
+  font-size: 32rpx;
+}
+.content{
+  width: 85%;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+}
+.images-style{
+  width: 185rpx;
+  height: 185rpx;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+}
+.goods-name{
+  font-size: 30rpx;
+  margin-top: 5px;
+}
+
+
+.goods-describe{
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  color: #808080;
+}
+
+.goods-opration{
+  display: flex;
+  flex-direction: row;
+  height: 70rpx;
+  margin-top: 20rpx;
+  align-content: center;
+  justify-items: center;
+  
+}
+.goods-time{
+  width: 100%;
+  height: 70rpx;
+}
+
+.time-text{
+  color: #645e5e;
+  margin-left: 20rpx;
+  font-size: 25rpx;
+}
+
+.goods-look{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 50rpx;
+}
+.look-image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.look-text{
+  font-size: 40rpx;
+  margin-left: 10rpx;
+}
+.add_icon{
+  position: fixed;
+  width: 100rpx;
+  height: 100rpx;
+  bottom: 30rpx;
+  right: 40rpx;
+}

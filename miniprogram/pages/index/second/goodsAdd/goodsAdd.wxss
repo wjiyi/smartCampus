@@ -1,0 +1,76 @@
+/* pages/index/second/goodsAdd/goodsAdd.wxss */
+.page{
+  padding: 20px
+}
+ 
+.text{
+  width: 100%;
+  margin-bottom: 5px;
+  font-size: 28rpx;
+  padding: 5px;
+  border: 1rpx #f2f2f2 solid;
+}
+ 
+ .desc-text{
+   height: 200rpx;
+ }
+.add-image{
+  display: inline-block;
+  /* margin-top: 30rpx; */
+}
+ 
+.moment_img{
+  width: 200rpx;
+  height: 200rpx;
+}
+ 
+.image_content{
+ width: 100%;
+ margin-bottom: 20px
+}
+
+.sendButton{
+  border-radius: 80rpx;
+  margin: 70rpx 50rpx;
+  font-size: 35ropx;
+}
+
+.send-more-result-main{
+}
+.send-more-result-main .file-box{
+  margin-right: 14rpx;
+  height: 200rpx;
+  width: 200rpx;
+  position: relative;
+  display: inline-block;
+}
+
+.send-more-result-main .file-box.deleting{
+  animation:deleting 0.5s ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes deleting {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(0);
+    }
+}
+
+.send-more-result-main .choose-img{
+    height: 100%;
+    width: 100%;
+}
+.send-more-result-main .remove-icon{
+    position: absolute;
+    right: 5rpx;
+    top: 5rpx;
+}
+
+.send-more-result-main .file-box .img-box {
+    height: 100%;
+    width: 100%;
+}
+

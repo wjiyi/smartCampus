@@ -1,0 +1,31 @@
+<!--pages/index/second/goodsDetails/goodsDetails.wxml-->
+<view class='goodsDetails-container'>
+  <view class='details'>
+    <view class='goods-name'>
+      <text>商品名字</text>
+      <text>{{item.goodsName}}</text>
+    </view>
+    <view class='goods-name'>
+      <text>商品描述</text>
+      <text>{{item.content}}</text>
+    </view>
+    <view class="image-container">
+      <block wx:for="{{item.imageList}}" wx:for-item="item2" wx:for-index="idx" wx:key="idx">
+        <image class='images-style' src='{{item2.tempFileURL}}' bindtap='previewImg' data-index="{{idx}}"></image>
+      </block>
+    </view>
+    <view class='goodsConnection'>
+    <view>
+    <text>联系人</text>
+    <text>{{item.connention}}</text>
+    </view>
+     <view>
+    <text>联系电话</text>
+    <text>{{item.phone}}</text>
+    </view>
+    
+    
+    </view>
+
+  </view>
+</view>

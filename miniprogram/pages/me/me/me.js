@@ -8,12 +8,6 @@ Page({
 
   },
 
-  goToInformation: function () {
-    wx.navigateTo({
-      url: '/pages/me/information/information',
-    })
-  },
-
 
   goToMyDynamic: function () {
     wx.navigateTo({
