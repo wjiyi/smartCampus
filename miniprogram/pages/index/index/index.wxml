@@ -23,11 +23,11 @@
         <image src='/images/index/help.png'></image>
         <text>帮帮助手</text>
       </view>
-      <view class='app'>
+      <view class='app' bindtap='goToInformation'>
         <image src='/images/index/new.png'></image>
         <text>校园资讯</text>
       </view>
-      <view class='app'>
+      <view class='app' bindtap='goToCorporation'>
         <image src='/images/index/corporation.png'></image>
         <text>社团组织</text>
       </view>

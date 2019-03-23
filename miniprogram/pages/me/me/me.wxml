@@ -27,9 +27,9 @@
   </view>
 
   <view class='category-item'>
-      <view class='detail-item'>
-        <image src='/images/me/message.png'></image>
-        <text>我的消息</text>
+      <view class='detail-item' catchtap='goToMyHelp'>
+        <image src='/images/index/help.png'></image>
+        <text>我的帮帮</text>
         <view class='detail-item-btn'></view>
       </view>
   </view>
@@ -43,9 +43,9 @@
   </view>
 
   <view class='category-item'>
-      <view class='detail-item'>
+      <view class='detail-item' catchtap='showSystemInfo'>
         <image src='/images/me/setting.png'></image>
-        <text>设置</text>
+        <text>系统信息</text>
         <view class='detail-item-btn'></view>
       </view>
   </view>

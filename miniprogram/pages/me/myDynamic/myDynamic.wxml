@@ -1,2 +1,21 @@
 <!--pages/myDynamic/myDynamic.wxml-->
+<import src='../../discovery/post-item/post-item-tpl.wxml'/>
+<!-- 发现页面 -->
+<view catchtap='hiddenInput'>
+
+  <block wx:for="{{postList}}" wx:for-item="item" wx:for-index="idx" wx:key="postList">
+    <view>
+      <template is='postItemTpl' data='{{...item,idx:idx}}'/>
+    </view>
+  </block>
+  
+</view>
+
+<!-- 评论输入框 -->
+  <view class='input-box' hidden='{{hiddenInput}}'>
+
+    <input class='input' value="{{commentInput}}" bindconfirm="submitComment" bindinput="bindCommentInput" placeholder="说点什么吧……"></input>
+    <view class='submit-btn' catchtap='submitComment'>发送</view>
+
+  </view>
 

@@ -41,50 +41,6 @@
   overflow-y: scroll;
 }
 
-.discovery-container{
-  width: auto;
-  margin-top: 10rpx;
-  height: auto;
-}
-.discovery-title {
-  display: flex;
-  flex-direction: row;
-  margin-left: 20rpx;
-}
-
-.discovery-avatar{
-  width: 100rpx;
-  height: 100rpx;
-  border-radius: 50rpx;
-}
-
-.name-container{
-  display: flex;
-  flex-direction: column;
-  margin-left: 20rpx;
-}
-
-.discovery-time{
-  color: #8d8d8d;
-  font-size: 20rpx;
-  margin-top: 15rpx;
-}
-
-.discovery-content{
-  margin-top: 10rpx;
-  margin-left: 20rpx;
-}
-
-.conten-text{
-  display: block;
-}
-
-.content-image{
-  margin-top:10rpx;
-  display: block;
-}
-
-
 .input-box{
   position: fixed;
   bottom: 0;

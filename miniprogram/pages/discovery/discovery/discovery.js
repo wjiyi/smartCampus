@@ -16,6 +16,7 @@ Page({
     //文章ID
     postId:null,
   },
+
   /**
    * 跳转到发表动态界面
    */
@@ -114,6 +115,8 @@ Page({
         hiddenInput: true,
         commentInput: ""
       })
+      //评论完成后下拉刷新
+      that.onPullDownRefresh();
     }).catch(err => {
       console.log("添加评论失败");
     })
@@ -148,6 +151,25 @@ Page({
   },
 
   /**
+   * 图片预览功能，点击图片放大看
+   */
+  previewImg : function(event){
+    //获取文章序列号
+    var postIndex=event.currentTarget.dataset.postIndex;
+    //获取图片序列号
+    var imgIndex = event.currentTarget.dataset.imgIndex;
+    var postImg = this.data.postList[postIndex].imageList;
+    var imgs=[];
+    for (var i = 0; i < postImg.length;i++ ){
+      imgs.push(postImg[i].tempFileURL);
+    }
+    wx.previewImage({
+      current : imgs[imgIndex],
+      urls: imgs,
+    })
+  },
+
+  /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
@@ -158,10 +180,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
     //重新返回后下拉刷新
     this.onPullDownRefresh();
-
   },
 
   /**

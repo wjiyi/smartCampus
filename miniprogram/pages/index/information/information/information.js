@@ -1,4 +1,4 @@
-// pages/help/help.js
+// pages/index/information/information/information.js
 Page({
 
   /**
@@ -6,7 +6,14 @@ Page({
    */
   data: {
     currentTab: 0,
-    dataList:[],
+
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+
   },
 
   //滑动切换
@@ -27,30 +34,6 @@ Page({
         currentTab: e.target.dataset.current
       })
     }
-  },
-
-  publish:function(){
-    wx.navigateTo({
-      url: '/pages/index/helpAdd/helpAdd',
-    })
-  },
-  
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    var that = this
-    const db = wx.cloud.database({});
-    const tables = db.collection("helpMessage");
-    tables.get({
-      success:res => {
-        this.setData({
-          dataList:res.data
-        })
-
-      }
-    })
-    
   },
 
   /**

@@ -16,9 +16,21 @@ Page({
     })
   },
 
+  goToInformation:function(){
+    wx.navigateTo({
+      url: '/pages/index/information/information/information',
+    })
+  },
+
   goToSecond:function(){
     wx.navigateTo({
       url: '/pages/index/second/second/second',
+    })
+  },
+
+  goToCorporation:function(){
+    wx.navigateTo({
+      url: '/pages/index/corporation/corporation/corporation',
     })
   },
 

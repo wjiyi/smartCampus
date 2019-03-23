@@ -19,6 +19,7 @@ Page({
     commentInput: "",
     //文章ID
     postId: null,
+    imageList: []
   },
 
   //滑动切换
@@ -412,6 +413,11 @@ Page({
   
   },
 
+  
+
+ /**
+   * 跳转到编写页面
+   */
   publish:function(){
     wx.navigateTo({
       url: '/pages/index/help/helpAdd/helpAdd',
@@ -464,6 +470,34 @@ Page({
         console.log(res)
       }
     })
+  },
+
+  /**
+   * 图片预览功能，点击图片放大看
+   */
+  previewImg: function (event) {
+    //获取文章序列号
+    
+    // var postIndex = event.currentTarget.dataset.idx;
+    //获取图片序列号
+    // console.log(postIndex)
+    var imgIndex = event.currentTarget.dataset.imgIndex;
+    console.log('imgIndex',imgIndex)
+    var postIdx = event.currentTarget.dataset.postIndex
+    var postImg = this.data.dataList[postIdx].tempImageURL;
+    console.log('postImg',postImg)
+    var imgs = [];
+    for (var i = 0; i < postImg.length; i++) {
+      imgs.push(postImg[i].tempFileURL);
+    }
+    wx.previewImage({
+      current: postImg[imgIndex],
+      urls: postImg
+    })
+  },
+  arcticalPost: function(e){
+    var idx = e.currentTarget.dataset.index
+    console.log('template excute',idx)
   },
 
   

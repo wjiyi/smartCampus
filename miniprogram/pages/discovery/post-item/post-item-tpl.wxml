@@ -16,11 +16,11 @@
 
     <!-- 图片显示 -->
     <view class="send-more-result-main">
-      <block wx:for="{{imageList}}" wx:for-item="item2" wx:for-index="idx" wx:key='imageList'>
+      <block wx:for="{{imageList}}" wx:for-item="item2" wx:for-index="imgIdx" wx:key='imageList'>
         <!--如果删除其中一个，则对其添加deleting 样式；-->
         <view class="file-box">
           <view class="img-box">
-            <image src="{{item2.tempFileURL}}" mode="aspectFill"></image> 
+            <image src="{{item2.tempFileURL}}" mode="aspectFill" catchtap='previewImg' data-post-index='{{idx}}'  data-img-index='{{imgIdx}}'></image> 
             
           </view>
         </view>

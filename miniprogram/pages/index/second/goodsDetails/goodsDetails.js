@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    item: {}
   },
 
   /**
@@ -13,7 +13,29 @@ Page({
    */
   onLoad: function (options) {
 
+    //获取传递过来的值
+    var goodsItem = JSON.parse(options.item)
+    this.setData({
+      item: goodsItem
+    })
   },
+
+  //图片点击放大
+  previewImg: function (e) {
+    var imgIndex = e.currentTarget.dataset.imgIndex
+    var goodsImg = this.data.item.imageList
+    var imgs = [];
+    for (var i = 0; i < goodsImg.length; i++) {
+      imgs.push(goodsImg[i].tempFileURL);
+    }
+    wx.previewImage({
+      current: imgs[imgIndex],
+      urls: imgs,
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
+  }, 
 
   /**
    * 生命周期函数--监听页面初次渲染完成

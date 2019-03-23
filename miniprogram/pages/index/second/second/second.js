@@ -56,19 +56,36 @@ Page({
     })
   },
   //跳转到商品详情页
-  goToGoodsDetails:function(){
-    wx.navigateTo({
-      url: '/pages/index/second/goodsDetails/goodsDetails',
+  goToGoodsDetails:function(e){
+    var index = e.currentTarget.dataset.postIndex
+    var url = '/pages/index/second/goodsDetails/goodsDetails?item=' + JSON.stringify(this.data.goodsList[index])
+    wx.navigateTo({url})
+    const db = wx.cloud.database()
+    const _ = db.command
+    db.collection('goods').doc(this.data.goodsList[index]._id).update({
+      data:{
+        lookNum: _.inc(1)
+      },
+      success(res) {
+        console.log(res.data)
+      }
     })
+  
   },
 
   //图片点击放大
   previewImg:function(e){
-    var index = e.currentTarget.dataset.index
-    console.log(this.data.goodsList[0].imageList)
+    var postIndex = e.currentTarget.dataset.index
+    var imgIndex = e.currentTarget.dataset.imgIndex
+    var goodsImg = this.data.goodsList[postIndex].imageList
+    var imgs = [];
+    for (var i = 0; i < goodsImg.length; i++) {
+      imgs.push(goodsImg[i].tempFileURL);
+    }
+
     wx.previewImage({
-      current: this.data.goodsList.imageList[index],
-      urls: this.data.goodsList.imageList,
+      current: imgs[imgIndex],
+      urls: imgs,
       success: function (res) { },
       fail: function (res) { },
       complete: function (res) { },

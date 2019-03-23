@@ -1,0 +1,31 @@
+/* pages/index/information/information/information.wxss */
+.swiper-tab {
+  width: 100%;
+  text-align: center;
+  height: 88rpx;
+  line-height: 88rpx;
+  display: flex;
+  flex-flow: row;
+}
+
+
+.swiper-tab-item {
+  width: 50%;
+  color: #434343;
+  font-size: 35rpx;
+}
+
+.active {
+  color: #f89422;
+  border-bottom: 4rpx solid #f2f2f2;
+}
+
+.tabs_swiper {
+  margin-top: 10px;
+  width: 100%;
+  height: 100vh;
+}
+
+.swiper-container{
+  overflow-y: scroll;
+}

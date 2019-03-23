@@ -20,12 +20,11 @@ Page({
    * 发表文章
    */
   addPost: function (event) {
-    if (this.data.content === '') {
-      wx.showToast({
-        title: '内容不能为空',
-      })
-      return
+    //如果输入框的值为空和没有图片，则直接返回
+    if (this.data.content == null && this.data.fileIDList.length == 0) {
+      return;
     }
+
     //交互反馈
     wx.showToast({
       title: '发表成功',
@@ -132,6 +131,7 @@ Page({
             },
           })
         }
+
       },
     })
 

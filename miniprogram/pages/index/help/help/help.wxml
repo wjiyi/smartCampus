@@ -21,28 +21,28 @@
     <swiper-item class="swiper-container">
       <block wx:for="{{dataList}}" wx:for-item="item" wx:for-index="idx" wx:key="dataList">
         <view>
-          <template is='postItemTpl' data='{{...item}}' />
+          <template is='postItemTpl' data='{{...item,idx}}' />
         </view>
       </block>
     </swiper-item>
     <swiper-item>
       <block wx:for="{{dataList}}" wx:for-item="item" wx:for-index="idx" wx:key="dataList">
         <view>
-          <template is='postItemTpl' data='{{...item}}' />
+           <template is='postItemTpl' data='{{...item,idx}}' />
         </view>
       </block>
     </swiper-item>
     <swiper-item>
       <block wx:for="{{dataList}}" wx:for-item="item" wx:for-index="idx" wx:key="dataList">
         <view>
-          <template is='postItemTpl' data='{{...item}}' />
+           <template is='postItemTpl' data='{{...item,idx}}' />
         </view>
       </block>
     </swiper-item>
     <swiper-item>
       <block wx:for="{{dataList}}" wx:for-item="item" wx:for-index="idx" wx:key="dataList">
         <view>
-          <template is='postItemTpl' data='{{...item}}' />
+           <template is='postItemTpl' data='{{...item,idx}}' />
         </view>
       </block>
     </swiper-item>

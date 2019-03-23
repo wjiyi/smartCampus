@@ -1,31 +1,36 @@
 <!--pages/index/second/goodsDetails/goodsDetails.wxml-->
 <view class='goodsDetails-container'>
-  <view class='details'>
-    <view class='goods-name'>
-      <text>商品名字</text>
-      <text>{{item.goodsName}}</text>
-    </view>
-    <view class='goods-name'>
-      <text>商品描述</text>
-      <text>{{item.content}}</text>
-    </view>
-    <view class="image-container">
-      <block wx:for="{{item.imageList}}" wx:for-item="item2" wx:for-index="idx" wx:key="idx">
-        <image class='images-style' src='{{item2.tempFileURL}}' bindtap='previewImg' data-index="{{idx}}"></image>
-      </block>
-    </view>
-    <view class='goodsConnection'>
-    <view>
-    <text>联系人</text>
-    <text>{{item.connention}}</text>
-    </view>
-     <view>
-    <text>联系电话</text>
-    <text>{{item.phone}}</text>
-    </view>
-    
-    
-    </view>
+  <view class='goods-name'>
+    <text class='goods'>商品名字：</text>
+    <text>{{item.goodName}}</text>
+  </view>
+  <view class='goods-name'>
+    <text class='goods'>商品描述：</text>
+    <text>{{item.content}}</text>
+  </view>
+  <text class='goodsImg'>图片详情：</text>
+  <view class="image-container">
 
+    <block wx:for="{{item.imageList}}" wx:for-item="item2" wx:for-index="idx" wx:key="idx">
+      <image class='images-style' src='{{item2.tempFileURL}}' bindtap='previewImg' data-index="{{idx}}" data-img-index="{{idx}}"></image>
+    </block>
+  </view>
+  <view class='goodsConnection'>
+    <view class='goods-name'>
+      <text class='goods'>联系人：</text>
+      <text>{{item.connention}}</text>
+    </view>
+    <view class='goods-name'>
+      <text class='goods'>联系电话：</text>
+      <text>{{item.phone}}</text>
+    </view>
+  </view>
+  <view class='pinglun'>
+    <view class='goods-time'>
+      <text>{{item.date}}</text>
+    </view>
+    <view class='pinglun-images'>
+    <image src='/images/index/pinglun.png'></image>
+    </view>
   </view>
 </view>
