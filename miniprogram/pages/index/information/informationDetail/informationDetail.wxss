@@ -1,0 +1,73 @@
+/* pages/index/information/informationDetail/informationDetail.wxss */
+.details{
+  display: flex;
+  flex-direction: column;
+  min-height:100vh;
+  background-color: #dadada;
+}
+
+.top{
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.top-title{
+  display: flex;
+  flex-direction: row;
+  margin-top: 10rpx;
+}
+
+.top-right{
+  display: flex;
+  flex-direction: column;
+  margin-right: 30rpx;
+}
+
+.mark{
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.like{
+  font-size: 30rpx;
+  margin-top: 10rpx;
+}
+
+.top-bottom{
+  display: flex;
+  flex-direction: row;
+  color: #333;
+  padding: 10rpx;
+  font-size: 30rpx;
+}
+.top-name{
+  margin-left: 30rpx;
+}
+
+.middle{
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  margin-top: 20rpx;
+}
+.card{
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px #f2f2f2 solid;
+  margin-top: 10rpx;
+}
+
+.title{
+  color: #343434;
+  font-size: 30rpx;
+}
+.fuzhi{
+  display: flex;
+  flex-direction: row;
+}
+
+.button{
+  width: 10rpx;
+  height: 10rpx;
+}

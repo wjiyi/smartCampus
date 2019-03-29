@@ -1,4 +1,4 @@
-// pages/index/second/goodsDetails/goodsDetails.js
+// pages/index/information/informationDetail/informationDetail.js
 Page({
 
   /**
@@ -7,34 +7,29 @@ Page({
   data: {
     item: {}
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
 
     //获取传递过来的值
-    var goodsItem = JSON.parse(options.item)
+    var postItem = JSON.parse(options.item)
     this.setData({
-      item: goodsItem
+      item: postItem
     })
+
   },
 
-  //图片点击放大
-  previewImg: function (e) {
-    var imgIndex = e.currentTarget.dataset.imgIndex
-    var goodsImg = this.data.item.imageList
-    var imgs = [];
-    for (var i = 0; i < goodsImg.length; i++) {
-      imgs.push(goodsImg[i].tempFileURL);
-    }
-    wx.previewImage({
-      current: imgs[imgIndex],
-      urls: imgs,
-      success: function (res) { },
-      fail: function (res) { },
-      complete: function (res) { },
+  copy:function(e){
+    console.log(e.target.dataset.url) 
+    wx.setClipboardData({
+      data:e.target.dataset.url,
+      success(res) {
+        console.log(res.data)
+      }
     })
-  }, 
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

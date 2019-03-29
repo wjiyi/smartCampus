@@ -1,25 +1,40 @@
-// pages/add/add.js
+// pages/index/information/informationAdd/informationAdd.js
 var app = getApp();
-var util = require('../../../utils/utils.js')
-
+var util = require('../../../../utils/utils.js'); 
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    date:'请选择开始时间',
+    enddate: '请选择结束时间',
+
+    //选择的图片的临时URL
+    chooseFiles: [],
+
+    tags: ['活动', '讲座', '其他'],
+    currentTag: "活动",
+    tag: "",
+
     //选择的图片的临时URL
     chooseFiles: [],
     //文章内容
     content: "",
     //图片文件ID列表
     fileIDList: [],
+
   },
 
   /**
-   * 发表文章
+   * 生命周期函数--监听页面加载
    */
-  addPost: function (event) {
+  onLoad: function (options) {
+
+  },
+
+
+  addPost:function(e){
     //如果输入框的值为空和没有图片，则直接返回
     if (this.data.content == null && this.data.fileIDList.length == 0) {
       return;
@@ -35,14 +50,15 @@ Page({
         //要延时执行的代码
         setTimeout(function () {
           //跳转到发现页面
-          wx.switchTab({
-            url: '../discovery/discovery'
+          wx.navigateTo({
+            url: '/pages/index/information/information/information'
           })
         }, 1500) //延迟时间 
       }
     });
 
     this.savePost();
+
   },
 
   /**
@@ -54,16 +70,25 @@ Page({
     var userInfoStorage = wx.getStorageSync('user');
     //将文章插入数据库
     const db = wx.cloud.database();
-    db.collection('post').add({
+    db.collection('activity').add({
       // data 字段表示需新增的 JSON 数据
       data: {
         _openid: app.globalData.openID,
         avatarUrl: userInfoStorage.avatarUrl,
         nickName: userInfoStorage.nickName,
-        date: util.formatTime(new Date(), "Y-M-D h:m:s"),
+        name: this.data.name,
         content: this.data.content,
+        date:this.data.date,
+        enddate:this.data.enddate,
+        place:this.data.place,
+        people:this.data.people,
+        organization:this.data.organization,
+        url:this.data.url,
         imageList: this.data.fileIDList,
-        comment: []
+        tag: this.data.currentTag,
+        lookNum:0,
+        time: util.formatTime(new Date(), "Y-M-D h:m:s"),
+        
       },
       success(res) {
         // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
@@ -73,22 +98,53 @@ Page({
   },
 
   /**
-   * 监听获取文本框的值
-   */
+  * 监听获取文本框的值
+  */
+  nameInput: function (event) {
+    this.data.name = event.detail.value;
+  },
+
   contentInput: function (event) {
     this.data.content = event.detail.value;
   },
 
+  changeTime: function (e) {
+    this.setData({
+      date: e.detail.value
+    })
+
+  },
+  changeEndTime: function (e) {
+    this.setData({
+      enddate: e.detail.value
+    })
+
+  },
+
+  placeInput: function (event) {
+    this.data.place = event.detail.value;
+  },
+
+  peopleInput: function (event) {
+    this.data.people = event.detail.value;
+  },
+  organizationInput:function(event){
+    this.data.organization = event.detail.value;
+  },
+  urlInput: function (event) {
+    this.data.url = event.detail.value;
+  },
+
   /**
-     * 选择本地照片与拍照
-     */
+    * 选择本地照片与拍照
+    */
   chooseImage: function (event) {
     //已选择图片数组
     var imgArr = this.data.chooseFiles;
     //已上传的图片数组
     var imgIDArr = this.data.fileIDList;
-    //只能上传3张图片，包括拍照，leftCount检测已选了多少张图片
-    var leftCount = 3 - imgArr.length;
+    //只能上传9张图片，包括拍照，leftCount检测已选了多少张图片
+    var leftCount = 1 - imgArr.length;
     if (leftCount <= 0) {
       return;
     }
@@ -100,7 +156,7 @@ Page({
       sourceType: ['album', 'camera'],
       success: function (res) {
 
-        //可以分次选择图片，但总数不能超过3张
+        //可以分次选择图片，但总数不能超过9张
         that.setData({
           chooseFiles: imgArr.concat(res.tempFilePaths)
         });
@@ -118,7 +174,7 @@ Page({
 
           wx.cloud.uploadFile({
             // 指定上传到的云路径
-            cloudPath: 'post/' + imagePath,
+            cloudPath: 'activity/' + imagePath,
             // 指定要上传的文件的小程序临时文件路径
             filePath: tempPath,
             // 成功回调
@@ -166,14 +222,16 @@ Page({
         chooseFiles: that.data.chooseFiles
       });
     }, 500)
+  }, 
+
+  //选择标签
+  selectTag: function (event) {
+    var tag = event.currentTarget.dataset.tag;
+    this.setData({
+      currentTag: tag
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

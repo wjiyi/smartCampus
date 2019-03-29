@@ -1,0 +1,68 @@
+<!--pages/index/information/informationAdd/informationAdd.wxml-->
+
+<view class='page'>
+  <view>
+    <textarea class='text' bindinput="nameInput" placeholder="活动名字" auto-height/>
+  </view>
+  <view>
+    <textarea class='text desc-text' bindinput='contentInput' placeholder='活动描述' />
+  </view>
+  <view class='picker-time'>
+    <view class='text' auto-height>
+      <text class='time'>开始时间:</text>
+      <picker class='time' mode='date' value='{{date}}' start='2019-3-24' end='2010-9-8' bindchange='changeTime'>{{date}}
+      </picker>
+    </view>
+  </view>
+  <view class='picker-time'>
+    <view class='text' auto-height>
+      <text class='time'>结束时间:</text>
+      <picker class='time' mode='date' value='{{enddate}}' start='2019-3-24' end='2010-9-8' bindchange='changeEndTime'>{{enddate}}
+      </picker>
+    </view>
+  </view>
+  <view>
+    <textarea class='text' bindinput='placeInput' placeholder='活动地点' auto-height/>
+  </view>
+  <view>
+    <textarea class='text' bindinput='peopleInput' placeholder='面向对象' auto-height/>
+  </view>
+  <view>
+    <textarea class='text' bindinput='organizationInput' placeholder='举办组织' auto-height/>
+  </view>
+  <view>
+    <textarea class='text' bindinput='urlInput' placeholder='推文链接' auto-height/>
+  </view>
+  <view class="image_content">
+  <text class='text'>添加活动封面</text>
+
+    <!--显示选择的图片-->
+    <view class="send-more-result-main">
+      <block wx:for="{{chooseFiles}}" wx:for-index="idx" wx:key='chooseFiles'>
+
+        <!--如果删除其中一个，则对其添加deleting 样式；-->
+        <view class="file-box {{deleteIndex==idx?'deleting':''}}">
+          <view class="img-box">
+            <image class='choose-img' src="{{item}}" mode="aspectFill"></image>
+            <icon class="remove-icon" type="cancel" size="23" color="#B2B2B2" catchtap="deleteImage" data-idx="{{idx}}" />
+          </view>
+        </view>
+      </block>
+      <view class='add-image' hidden="{{chooseFiles.length==1}}">
+        <image bindtap="chooseImage" class="moment_img" src='/images/discovery/add2.png'></image>
+      </view>
+    </view>
+
+  </view>
+  <view class='help_label'>
+    <view class="catalog_name">
+      <text>类型</text>
+      <view class='tags'>
+        <block wx:for="{{tags}}">
+          <text data-tag="{{item}}" bindtap='selectTag' class='{{currentTag === item?"active":""}}'>{{item}}</text>
+        </block>
+      </view>
+    </view>
+  </view>
+  <button bindtap="addPost" type='primary' class='sendButton'>发布</button>
+</view>

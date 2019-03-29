@@ -1,6 +1,6 @@
 {
   "pages": [
-    
+   
     "pages/login/login",
     "pages/index/index/index",
     "pages/discovery/discovery/discovery",
@@ -18,8 +18,10 @@
     "pages/index/help/help/help",
     "pages/index/second/second/second",
     "pages/index/corporation/corporation/corporation",
+    "pages/index/information/information/information",
     "pages/index/second/goodsAdd/goodsAdd",
-    "pages/index/information/information/information"
+    "pages/index/information/informationAdd/informationAdd",
+    "pages/index/information/informationDetail/informationDetail"
     
   ],
   "window": {
