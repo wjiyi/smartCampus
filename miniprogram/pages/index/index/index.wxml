@@ -1,15 +1,15 @@
 <!--index.wxml-->
 <!-- 首页 -->
 <view class="container">
-  <swiper catchtap="onSwiperTap" vertical="{{false}}"  indicator-dots="true" autoplay="true" interval="5000" circular="true">
+  <swiper catchtap="onSwiperTap" vertical="{{false}}" indicator-dots="true" autoplay="true" interval="5000" circular="true">
     <swiper-item>
-      <image src="/images/post-4.jpg"  />
+      <image src="/images/post-4.jpg" />
     </swiper-item>
     <swiper-item>
-      <image src="/images/post-2.jpg"  />
+      <image src="/images/post-2.jpg" />
     </swiper-item>
     <swiper-item>
-      <image src="/images/post-3.jpg"  />
+      <image src="/images/post-3.jpg" />
     </swiper-item>
   </swiper>
 
@@ -34,7 +34,7 @@
     </view>
 
     <view class='row'>
-      
+
       <view class='app' bindtap='goToSecond'>
         <image src='/images/index/second.png'></image>
         <text>二手市场</text>
@@ -50,39 +50,41 @@
       <view class='app' bindtap='goToMore'>
         <image src='/images/index/more.png'></image>
         <text>敬请期待</text>
-       </view>
+      </view>
     </view>
 
   </view>
 
   <view class='hot-title'>
     <text class='title'>热门内容</text>
-    <text class='title-more' decode='true'>更多&nbsp;&gt;&gt;</text>
-    <view class='activity'>
-      <view class='act-title'>
-        <text>当开学遇上花马 | 花都摇滚马拉松邀请你来报名了</text>
-        <text class='act-time'>2019年2月3日 11:29</text>
-      </view>
-      <image class='act-image' src='/images/post-4.jpg'></image>
-    </view>
-    <view class='activity'>
-      <view class='act-title'>
-        <text>当开学遇上花马 | 花都摇滚马拉松邀请你来报名了</text>
-        <text class='act-time'>2019年2月3日 11:29</text>
-      </view>
-      <image class='act-image' src='/images/post-4.jpg'></image>
-    </view>
+    <text class='title-more' decode='true' bindtap='goToInformation'>更多&nbsp;&gt;&gt;</text>
+    <view class='activity-card'>
+      <block class='card' wx:for="{{postList}}" wx:for-item="item" wx:for-index="idx" wx:key="postList">
+        <!--活动 -->
+        <view class='activity' bindtap='goToInformationDetail' data-idx="{{idx}}">
+          <!--活动左边框 -->
+          <view class='activity-left'>
+            <!--活动类别和名字 -->
+            <view class='activity-name'>
+              <text class='tag'>{{item.tag}}</text>
 
-    <view class='activity'>
-      <view class='act-title'>
-        <text>当开学遇上花马 | 花都摇滚马拉松邀请你来报名了</text>
-        <text class='act-time'>2019年2月3日 11:29</text>
-      </view>
-      <image class='act-image' src='/images/post-4.jpg'></image>
+              <text class='act-name'>{{item.name}}</text>
+            </view>
+            <!--活动发表时间和举办方 -->
+            <view class='avtivity-time'>
+              <text class='time'>{{item.time}}</text>
+              <image class='img' src='/images/index/eye.png'></image>
+              <text class='num'>{{item.lookNum}}</text>
+            </view>
+          </view>
+          <view>
+            <image class='imageStyle' src='{{item.imageList[0]}}'></image>
+          </view>
+        </view>
+      </block>
     </view>
 
   </view>
-    
+  <text class='line'>我是有底线的~</text>
+
 </view>
-
-

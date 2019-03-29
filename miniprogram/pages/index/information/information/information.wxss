@@ -29,3 +29,64 @@
 .swiper-container{
   overflow-y: scroll;
 }
+
+.activity{
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+}
+
+.activity-left{
+  display: flex;
+  flex-direction: column;
+}
+
+.avtivity-time{
+  display: flex;
+  flex-direction: row;
+  margin-top: 10rpx;
+  align-self: flex-end;
+}
+
+.act-name{
+  margin-left: 20rpx;
+  height: 200rpx;
+  }
+
+.time{
+  color: #434343;
+  font-size: 30rpx;
+}
+.tag{
+  background-color: #f89422;
+  padding-left: 10rpx;
+   padding-right: 10rpx;
+  border-radius: 10rpx;
+}
+
+.add_icon{
+  position: fixed;
+  width: 100rpx;
+  height: 100rpx;
+  bottom: 30rpx;
+  right: 40rpx;
+}
+
+.img{
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 30rpx;
+}
+
+.num{
+  color: #434343;
+  font-size: 30rpx;
+  margin-left: 20rpx;
+}
+
+.imageStyle{
+  height: 150rpx;
+  width: 200rpx;
+  margin-left: 20rpx;
+  align-self: flex-end;
+}

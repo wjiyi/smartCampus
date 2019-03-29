@@ -1,5 +1,7 @@
 //index.js
 const app = getApp()
+const db = wx.cloud.database();
+const tables = db.collection("activity")
 
 Page({
   data: {
@@ -7,7 +9,12 @@ Page({
     userInfo: {},
     logged: false,
     takeSession: false,
-    requestResult: ''
+    requestResult: '',
+    //文章数组
+    postList: [],
+    //文章ID
+    postId: null,
+    imageList: []
   },
 
   goToHelp:function(){
@@ -54,6 +61,47 @@ Page({
       return
     }
 
+    tables.orderBy('lookNum', 'desc').limit(3).get({
+      success: res => {
+        this.setData({
+          postList: res.data
+        })
+        var temp = res.data
+        for (let i = 0; i < temp.length; i++) {
+          temp[i].tempImageURL = []
+          var tempImageList = res.data[i].imageList;
+          if (tempImageList.length == 0) {
+            tempImageList = [""]
+          }
+          wx.cloud.callFunction({
+            // 要调用的云函数名称
+            name: 'getImageURL',
+            data: {
+              imageList: tempImageList,
+            }
+          })
+            .then(res => {
+              var imgArr = res.result;
+              for (var j = 0; j < imgArr.length; j++) {
+                var oSelected = "dataList[" + i + "].tempImageURL[" + j + "]"
+                if (imgArr[j].fileID !== "") {
+                  this.setData({
+                    [oSelected]: imgArr[j].tempFileURL
+                  })
+                }
+              }
+            })
+
+        }
+      },
+      fail: err => {
+        console.log(err)
+      },
+      complete: res => {
+        console.log(res)
+      }
+    })
+
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -99,6 +147,29 @@ Page({
         wx.navigateTo({
           url: '../deployFunctions/deployFunctions',
         })
+      }
+    })
+  },
+
+  goToInformation:function(){
+    wx.navigateTo({
+      url: '/pages/index/information/information/information',
+    })
+  },
+
+//跳转到活动详情页
+  goToInformationDetail: function (e) {
+    var index = e.currentTarget.dataset.idx
+    var url = '/pages/index/information/informationDetail/informationDetail?item=' + JSON.stringify(this.data.postList[index])
+    wx.navigateTo({ url })
+    const db = wx.cloud.database()
+    const _ = db.command
+    db.collection('activity').doc(this.data.postList[index]._id).update({
+      data: {
+        lookNum: _.inc(1)
+      },
+      success(res) {
+        console.log(res.data)
       }
     })
   },

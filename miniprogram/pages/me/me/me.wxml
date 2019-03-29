@@ -58,4 +58,18 @@
       </view>
   </view>
 
+  <view class='category-item' hidden="{{
+  
+  
+  
+  
+  
+      }}">
+      <view class='detail-item'>
+        <image src='/images/me/check.png'></image>
+        <text>审核后台</text>
+        <view class='detail-item-btn'></view>
+      </view>
+  </view>
+
 </view>
