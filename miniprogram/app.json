@@ -21,7 +21,9 @@
     "pages/index/information/information/information",
     "pages/index/second/goodsAdd/goodsAdd",
     "pages/index/information/informationAdd/informationAdd",
-    "pages/index/information/informationDetail/informationDetail"
+    "pages/index/information/informationDetail/informationDetail",
+    "pages/me/check/check",
+    "pages/me/checkDetails/checkDetails"
     
   ],
   "window": {

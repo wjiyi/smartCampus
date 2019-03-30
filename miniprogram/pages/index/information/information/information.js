@@ -3,7 +3,6 @@ const db = wx.cloud.database();
 const tables = db.collection("activity")
 
 Page({
-
   /**
    * 页面的初始数据
    */

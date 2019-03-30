@@ -1,0 +1,44 @@
+<!--pages/me/checkDetails/checkDetails.wxml-->
+<!--pages/index/information/informationDetail/informationDetail.wxml-->
+<view class='details' >
+  <view class='top'>
+    <image mode='widthFix' src='{{item.imageList[0]}}'></image>
+    <view class='top-title'>
+      <text>{{item.name}}</text>
+      <view class='top-right'>
+        <image class='mark' src='/images/index/mark.png' mode='widthFix'></image>
+        <text class='like'>喜欢</text>
+      </view>
+    </view>
+    <view class='top-bottom'>
+      <text>{{item.time}}</text>
+      <text class='top-name'>{{item.organization}}</text>
+    </view>
+  </view>
+  <view class='middle'>
+    <view class='card'>
+      <text class='title'>活动摘要</text>
+      <text>{{item.content}}</text>
+    </view>
+    <view class='card'>
+      <text class='title'>活动时间</text>
+      <text>{{item.date}}-{{item.enddate}}</text>
+    </view>
+    <view class='card'>
+      <text class='title'>{{item.place}}</text>
+      <text>A5-205</text>
+    </view>
+    <view class='card'>
+      <text class='title'>面向对象</text>
+      <text>{{item.people}}</text>
+    </view>
+    <view class='card'>
+      <text class='title'>推文详情(请在浏览器中打开)</text>
+      <view class='fuzhi'>
+      <text >{{item.url}}</text>
+      <button type='primary' bindtap='copy' data-url='{{item.url}}'>复制</button>
+      </view>
+      
+    </view>
+  </view>
+</view>
