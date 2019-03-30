@@ -1,0 +1,13 @@
+<!--pages/me/check/check.wxml-->
+<view class='check-container'>
+ <block wx:for="{{postList}}" wx:for-item="item" wx:for-index="idx" wx:key="postList">
+  <view class='card' bindtap='goToCheckDetails' data-idx="{{idx}}">
+      <text>{{item.name}}</text>
+      <view class='button-style'>
+        <button type='primary' class='pass' catchtap='pass' disabled='{{hasClick[idx]}}' data-index="{{idx}}">{{buttonName[idx]}}</button>
+        <button type='primary' class='pass' catchtap='noPass' disabled='{{hasClick[idx]}}' data-index="{{idx}}">{{buttonNoNme[idx]}}</button>
+      </view>
+    
+  </view>
+  </block>
+</view>

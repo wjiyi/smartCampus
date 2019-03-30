@@ -1,11 +1,15 @@
 // pages/me/me.js
+const app = getApp()
+const db = wx.cloud.database();
+const tables = db.collection("administrator")
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    hiddenName:true,
+    list:{}
   },
 
   /**
@@ -14,12 +18,25 @@ Page({
   onLoad: function (options) {
     //获取缓存中的用户信息
     var userInfoStorage = wx.getStorageSync('user');
+    console.log(userInfoStorage)
     //如果缓存中有用户信息，直接数据绑定
     if (userInfoStorage) {
       this.setData({
         userInfo: userInfoStorage
       })
     }
+    var that = this
+    tables.get({
+      success: res => {
+        for(let i = 0;i<res.data.length;i++){
+          if (userInfoStorage.nickName == res.data[i].name ){
+            this.setData({
+              hiddenName:false
+            })
+          }
+        }
+      }
+    })
   },
 
   /**
@@ -36,6 +53,14 @@ Page({
   goToMyHelp:function(){
     wx.navigateTo({
       url: '/pages/me/myHelp/myHelp',
+    })
+  },
+/**
+   * 跳转到审核后台的界面
+   */
+  goToCheck:function(){
+    wx.navigateTo({
+      url: '/pages/me/check/check',
     })
   },
 
