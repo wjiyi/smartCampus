@@ -1,6 +1,6 @@
 // pages/index/information/information/information.js
 const db = wx.cloud.database();
-const tables = db.collection("activity")
+const tables = db.collection("passActivity")
 
 Page({
   /**
@@ -368,16 +368,16 @@ Page({
     var index = e.currentTarget.dataset.idx
     var url = '/pages/index/information/informationDetail/informationDetail?item=' + JSON.stringify(this.data.postList[index])
     wx.navigateTo({ url })
-    const db = wx.cloud.database()
-    const _ = db.command
-    db.collection('activity').doc(this.data.postList[index]._id).update({
-      data: {
-        lookNum: _.inc(1)
-      },
-      success(res) {
-        console.log(res.data)
-      }
-    })
+    // const db = wx.cloud.database()
+    // const _ = db.command
+    // db.collection('passActivity').doc(this.data.postList[index]).update({
+    //   data: {
+    //     lookNum: _.inc(1)
+    //   },
+    //   success(res) {
+    //     console.log(res.data)
+    //   }
+    // })
   },
 
   /**

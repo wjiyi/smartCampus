@@ -6,7 +6,7 @@ Page({
    */
   data: {
 
-    item: {}
+    item: {},
 
   },
 

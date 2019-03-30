@@ -1,7 +1,7 @@
 //index.js
 const app = getApp()
 const db = wx.cloud.database();
-const tables = db.collection("activity")
+const tables = db.collection("passActivity")
 
 Page({
   data: {
@@ -164,7 +164,7 @@ Page({
     wx.navigateTo({ url })
     const db = wx.cloud.database()
     const _ = db.command
-    db.collection('activity').doc(this.data.postList[index]._id).update({
+    db.collection('passActivity').doc(this.data.postList[index]._id).update({
       data: {
         lookNum: _.inc(1)
       },

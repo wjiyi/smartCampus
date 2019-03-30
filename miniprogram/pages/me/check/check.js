@@ -1,6 +1,5 @@
 // pages/me/check/check.js
 const db = wx.cloud.database();
-const tables = db.collection("activity")
 Page({
 
   /**
@@ -10,7 +9,11 @@ Page({
 
     postList: [],
     //文章ID
-    imageList: []
+    imageList: [],
+    postId: null,
+    hasClick: [],
+    buttonName: [],
+    buttonNoNme: [],
 
   },
 
@@ -19,38 +22,23 @@ Page({
    */
   onLoad: function (options) {
 
-    tables.orderBy('time', 'desc').get({
+    db.collection("activity").orderBy('time', 'desc').get({
       success: res => {
         this.setData({
           postList: res.data
         })
-        var temp = res.data
-        for (let i = 0; i < temp.length; i++) {
-          temp[i].tempImageURL = []
-          var tempImageList = res.data[i].imageList;
-          if (tempImageList.length == 0) {
-            tempImageList = [""]
-          }
-          wx.cloud.callFunction({
-            // 要调用的云函数名称
-            name: 'getImageURL',
-            data: {
-              imageList: tempImageList,
-            }
-          })
-            .then(res => {
-              var imgArr = res.result;
-              for (var j = 0; j < imgArr.length; j++) {
-                var oSelected = "dataList[" + i + "].tempImageURL[" + j + "]"
-                if (imgArr[j].fileID !== "") {
-                  this.setData({
-                    [oSelected]: imgArr[j].tempFileURL
-                  })
-                }
-              }
-            })
-
+        // console.log(this.postList)
+        var buttonNameArr = []
+        var buttonNoNmeArr = []
+        for (var i = 0; i < this.data.postList.length; i++){
+          buttonNameArr.push('通过')
+          buttonNoNmeArr.push('不通过')
         }
+        this.setData({
+          buttonName: buttonNameArr,
+          buttonNoNme: buttonNoNmeArr
+        })
+
       },
       fail: err => {
         console.log(err)
@@ -62,11 +50,54 @@ Page({
 
   },
 
-  goToInCheckDetails:function(e){
+  goToCheckDetails:function(e){
     var index = e.currentTarget.dataset.idx
+    console.log(index)
     var url = '/pages/me/checkDetails/checkDetails?item=' + JSON.stringify(this.data.postList[index])
     wx.navigateTo({ url })
     
+  },
+
+//点击通过按钮
+  pass:function(e){
+    var index = e.currentTarget.dataset.index
+    var buttonName = 'buttonName[' + index + ']'
+    var hasClick = 'hasClick[' + index + ']'
+    this.setData({
+      [buttonName]:'已通过',
+      [hasClick]: true
+    })
+    console.log('ss',this.data.postList[index]._openid)
+    db.collection("passActivity").add({
+     data: {
+       content: this.data.postList[index].content,
+       date: this.data.postList[index].date,
+       enddate: this.data.postList[index].enddate,
+       imageList: this.data.postList[index].imageList,
+       lookNum: this.data.postList[index].lookNum,
+       name: this.data.postList[index].name,
+       nickName: this.data.postList[index].nickName,
+       organization: this.data.postList[index].organization,
+       people: this.data.postList[index].people,
+       place: this.data.postList[index].place,
+       tag: this.data.postList[index].tag,
+       time: this.data.postList[index].time,
+       url: this.data.postList[index].url,
+     }
+    })
+  },
+
+//点击不通过按钮
+  noPass:function(e) {
+
+    var index = e.currentTarget.dataset.index
+    var buttonNoName = 'buttonNoName[' + index + ']'
+    var hasClick = 'hasClick[' + index + ']'
+    this.setData({
+      [buttonNoName]: '不通过',
+      [hasClick]: true
+    })
+
   },
 
   /**
