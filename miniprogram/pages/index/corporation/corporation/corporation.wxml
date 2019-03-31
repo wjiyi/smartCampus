@@ -6,8 +6,8 @@
   </view>
   <swiper current="{{currentTab}}" duration="300" bindchange="swiperTab" class='tabs_swiper'>
     <swiper-item class="swiper-container">
-      <block>
-        <view class='category-item' wx:for="{{organizationList}}" wx:for-item="item" wx:for-index="idx" >
+      <block >
+        <view class='category-item' wx:for="{{organizationList}}" wx:for-item="item" wx:for-index="idx" bindtap='goToOrganizationDetails' data-idx="{{idx}}">
           <view class='detail-item'>
             <image src='{{item.image}}'></image>
             <text>{{item.name}}</text>
@@ -29,8 +29,8 @@
           </view>
         </view>
 
-        <view class='category-item' wx:for="{{corporationList}}" wx:for-item="item" wx:for-index="idx" >
-          <view class='detail-item'>
+        <view class='category-item' wx:for="{{corporationList}}" wx:for-item="item" wx:for-index="idx" bindtap='goToDetails' data-idx="{{idx}}">
+          <view class='detail-item' >
             <image src='{{item.image}}'></image>
             <text>{{item.name}}</text>
           </view>

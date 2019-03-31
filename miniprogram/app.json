@@ -23,7 +23,11 @@
     "pages/index/information/informationAdd/informationAdd",
     "pages/index/information/informationDetail/informationDetail",
     "pages/me/check/check",
-    "pages/me/checkDetails/checkDetails"
+    "pages/me/about/about",
+    "pages/me/checkDetails/checkDetails",
+    "pages/index/corporation/corporationDetails/corporationDetails",
+    "pages/index/corporation/organizationDetails/organizationDetails"
+    
     
   ],
   "window": {
@@ -31,7 +35,8 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
     "navigationBarTitleText": "智慧校园",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "color": "#8d8d8d",

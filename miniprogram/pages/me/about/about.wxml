@@ -1,0 +1,22 @@
+<!--pages/me/about/about.wxml-->
+<view class='about-container'>
+  <view class='about'>
+    <image class='img' src='/images/me/logo.png'></image>
+  </view>
+  <view class='about'>
+    <text class='name'>智慧校园</text>
+  </view>
+  <view class='about'>
+    <text class='biaoyu'>我的校园 我来玩儿</text>
+  </view>
+  <view class='about'>
+    <text class='biaoyu'>开发者：武纪怡</text>
+  </view>
+<view class='about'>
+  <text class='biaoyu'>有问题请联系@1096494284@qq.com</text>
+</view>
+<view class='about'>
+  <text class='biaoyu'>感谢~</text>
+</view>
+
+</view>

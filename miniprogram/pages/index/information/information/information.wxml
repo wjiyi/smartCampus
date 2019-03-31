@@ -35,7 +35,7 @@
     <swiper-item class="swiper-container">
       <block wx:for="{{postList}}" wx:for-item="item" wx:for-index="idx" wx:key="postList">
         <!--活动 -->
-        <view class='activity' bindtap='goToInformationDetail'>
+        <view class='activity' bindtap='goToInformationDetail' data-idx="{{idx}}" >
           <!--活动左边框 -->
           <view class='activity-left'>
             <!--活动类别和名字 -->
@@ -61,7 +61,7 @@
     <swiper-item class="swiper-container">
       <block wx:for="{{postList}}" wx:for-item="item" wx:for-index="idx" wx:key="postList">
         <!--活动 -->
-        <view class='activity' bindtap='goToInformationDetail'>
+        <view class='activity' bindtap='goToInformationDetail' data-idx="{{idx}}">
           <!--活动左边框 -->
           <view class='activity-left'>
             <!--活动类别和名字 -->

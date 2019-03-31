@@ -1,0 +1,5 @@
+<!--pages/index/corporation/corporationDetails/corporationDetails.wxml-->
+<view class='corporationDetails'>
+<text>了解详情请识别二维码（保存到相册或者发送给朋友）</text>
+<image src='{{item.erweima}}' catchtap='previewImg'></image>
+</view>

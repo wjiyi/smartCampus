@@ -14,7 +14,6 @@ Page({
     organizationList:[],
     tag:''
 
-
   },
 
   /**
@@ -148,6 +147,23 @@ Page({
       })
     }
  
+  },
+
+  goToDetails:function(e){
+    var index = e.currentTarget.dataset.idx
+    var url = '/pages/index/corporation/corporationDetails/corporationDetails?item=' + JSON.stringify(this.data.corporationList[index])
+    wx.navigateTo({
+      url
+    })
+  },
+
+  goToOrganizationDetails:function (e) {
+    var index = e.currentTarget.dataset.idx
+    var url = '/pages/index/corporation/organizationDetails/organizationDetails?item=' + JSON.stringify(this.data.organizationList[index])
+    wx.navigateTo({
+      url
+    })
+    
   },
 
 

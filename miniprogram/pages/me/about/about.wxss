@@ -1,0 +1,26 @@
+/* pages/me/about/about.wxss */
+.about-container{
+  display: flex;
+  flex-direction: column;
+  margin-top: 150rpx;
+}
+
+.about{
+  display: flex;
+  margin-top: 30rpx;
+  justify-content: center;
+}
+
+.img{
+  width: 130rpx;
+  height: 130rpx;
+
+}
+
+.name{
+  color: #f89422;
+}
+
+.biaoyu{
+  font-size: 30rpx;
+}

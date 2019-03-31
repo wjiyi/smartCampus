@@ -15,10 +15,6 @@
 
   <view class="apps">
     <view class='row'>
-      <view class='app'>
-        <image src='/images/index/system.png'></image>
-        <text>教务系统</text>
-      </view>
       <view class='app' bindtap='goToHelp'>
         <image src='/images/index/help.png'></image>
         <text>帮帮助手</text>
@@ -42,10 +38,6 @@
       <view class='app' bindtap='goToSchool'>
         <image src='/images/index/school.png'></image>
         <text>校园杂事</text>
-      </view>
-      <view class='app' bindtap='goToMore'>
-        <image src='/images/index/more.png'></image>
-        <text>敬请期待</text>
       </view>
       <view class='app' bindtap='goToMore'>
         <image src='/images/index/more.png'></image>

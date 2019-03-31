@@ -2,39 +2,39 @@
 
 <view class='page'>
   <view>
-    <textarea class='text' bindinput="nameInput" placeholder="活动名字" auto-height/>
+    <textarea class='text' bindinput="nameInput" placeholder="活动名字（必填）" auto-height/>
   </view>
   <view>
-    <textarea class='text desc-text' bindinput='contentInput' placeholder='活动描述' />
+    <textarea class='text desc-text' bindinput='contentInput' placeholder='活动描述（必填）' />
   </view>
   <view class='picker-time'>
     <view class='text' auto-height>
-      <text class='time'>开始时间:</text>
+      <text class='time'>开始时间（必填）:</text>
       <picker class='time' mode='date' value='{{date}}' start='2019-3-24' end='2010-9-8' bindchange='changeTime'>{{date}}
       </picker>
     </view>
   </view>
   <view class='picker-time'>
     <view class='text' auto-height>
-      <text class='time'>结束时间:</text>
+      <text class='time'>结束时间（必填）:</text>
       <picker class='time' mode='date' value='{{enddate}}' start='2019-3-24' end='2010-9-8' bindchange='changeEndTime'>{{enddate}}
       </picker>
     </view>
   </view>
   <view>
-    <textarea class='text' bindinput='placeInput' placeholder='活动地点' auto-height/>
+    <textarea class='text' bindinput='placeInput' placeholder='活动地点（必填）' auto-height/>
   </view>
   <view>
-    <textarea class='text' bindinput='peopleInput' placeholder='面向对象' auto-height/>
+    <textarea class='text' bindinput='peopleInput' placeholder='面向对象（必填）' auto-height/>
   </view>
   <view>
-    <textarea class='text' bindinput='organizationInput' placeholder='举办组织' auto-height/>
+    <textarea class='text' bindinput='organizationInput' placeholder='举办组织（必填）' auto-height/>
   </view>
   <view>
-    <textarea class='text' bindinput='urlInput' placeholder='推文链接' auto-height/>
+    <textarea class='text' bindinput='urlInput' placeholder='推文链接（选填）' auto-height/>
   </view>
   <view class="image_content">
-  <text class='text'>添加活动封面</text>
+  <text class='text'>添加活动封面（必填）</text>
 
     <!--显示选择的图片-->
     <view class="send-more-result-main">

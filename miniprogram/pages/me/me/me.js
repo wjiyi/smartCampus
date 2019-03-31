@@ -67,11 +67,20 @@ Page({
   /**
    * 跳转到获取系统信息的界面
    */
-  showSystemInfo: function () {
+  goToDevice: function () {
     wx.navigateTo({
-      url: '../device/device',
-    });
+      url: '/pages/me/device/device',
+    })
   },
+  /**
+     * 跳转到关于我们的界面
+     */
+  goToAbout: function () {
+    wx.navigateTo({
+      url: '/pages/me/about/about',
+    })
+  },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成

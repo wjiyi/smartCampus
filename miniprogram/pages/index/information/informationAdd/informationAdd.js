@@ -19,8 +19,6 @@ Page({
 
     //选择的图片的临时URL
     chooseFiles: [],
-    //文章内容
-    content: "",
     //图片文件ID列表
     fileIDList: [],
 
@@ -36,28 +34,39 @@ Page({
 
   addPost:function(e){
     //如果输入框的值为空和没有图片，则直接返回
-    if (this.data.content == null && this.data.fileIDList.length == 0) {
-      return;
+    if (this.data.name == null || this.data.fileIDList.length == 0 || this.data.content== null || this.data.date == null || this.data.enddate == null || this.data.organization == null || this.data.people == null ||this.data.place == null ) {
+      wx.showModal({
+        title: '提示',
+        content: '请填写所有必填项再提交',
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          } else {
+            console.log('用户点击取消')
+          }
+
+        }
+      })
+    }else{
+      //交互反馈
+      wx.showToast({
+        title: '发表成功,待审核',
+        duration: 1500,
+        icon: "suceess",
+        mask: true,
+        success: function () {
+          //要延时执行的代码
+          setTimeout(function () {
+            //跳转到发现页面
+            wx.navigateTo({
+              url: '/pages/index/information/information/information'
+            })
+          }, 1500) //延迟时间 
+        }
+      });
+      this.savePost();
     }
-
-    //交互反馈
-    wx.showToast({
-      title: '发表成功',
-      duration: 1500,
-      icon: "suceess",
-      mask: true,
-      success: function () {
-        //要延时执行的代码
-        setTimeout(function () {
-          //跳转到发现页面
-          wx.navigateTo({
-            url: '/pages/index/information/information/information'
-          })
-        }, 1500) //延迟时间 
-      }
-    });
-
-    this.savePost();
+   
 
   },
 

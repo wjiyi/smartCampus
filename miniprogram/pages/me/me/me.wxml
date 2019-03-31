@@ -43,15 +43,15 @@
   </view>
 
   <view class='category-item'>
-      <view class='detail-item'>
+      <view class='detail-item' catchtap='goToDevice'>
         <image src='/images/me/setting.png'></image>
-        <text>设置</text>
+        <text>系统消息</text>
         <view class='detail-item-btn'></view>
       </view>
   </view>
 
   <view class='category-item'>
-      <view class='detail-item'>
+      <view class='detail-item' catchtap='goToAbout'>
         <image src='/images/me/about.png'></image>
         <text>关于我们</text>
         <view class='detail-item-btn'></view>

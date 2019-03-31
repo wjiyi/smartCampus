@@ -1,0 +1,14 @@
+/* pages/index/corporation/corporationDetails/corporationDetails.wxss */
+.corporationDetails{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+}
+
+text{
+  font-size: 30rpx;
+  margin-top: 20rpx;
+}
+image{
+  margin-top: 20rpx;
+}
