@@ -15,13 +15,21 @@
 .top-title{
   display: flex;
   flex-direction: row;
-  margin-top: 10rpx;
+  margin-top: 20rpx;
+  margin-left: 25rpx;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.img-bg{
+  margin:auto;
 }
 
 .top-right{
   display: flex;
   flex-direction: column;
-  margin-right: 30rpx;
+  margin-right: 40rpx;
+
 }
 
 .mark{
@@ -40,6 +48,7 @@
   color: #333;
   padding: 10rpx;
   font-size: 30rpx;
+  margin-left: 25rpx;
 }
 .top-name{
   margin-left: 30rpx;

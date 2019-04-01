@@ -39,13 +39,14 @@
 .activity-left{
   display: flex;
   flex-direction: column;
+  margin-left: 20rpx;
 }
 
 .avtivity-time{
   display: flex;
   flex-direction: row;
-  margin-top: 10rpx;
-  align-self: flex-end;
+  margin-top: 60rpx;
+
 }
 
 .act-name{
@@ -87,6 +88,7 @@
 .imageStyle{
   height: 150rpx;
   width: 200rpx;
-  margin-left: 20rpx;
+  margin-left: 80rpx;
   align-self: flex-end;
+  
 }

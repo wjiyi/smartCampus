@@ -1,7 +1,7 @@
 <!--pages/index/information/informationDetail/informationDetail.wxml-->
 <view class='details' >
   <view class='top'>
-    <image mode='widthFix' src='{{item.imageList[0]}}'></image>
+    <image class='img-bg' mode='widthFix' src='{{item.imageList[0]}}'></image>
     <view class='top-title'>
       <text>{{item.name}}</text>
       <view class='top-right'>

@@ -70,12 +70,13 @@ swiper image{
 .activity-left{
   display: flex;
   flex-direction: column;
+  margin-left: 20rpx;
 }
 
 .avtivity-time{
   display: flex;
   flex-direction: row;
-  margin-top: 10rpx;
+  margin-top: 60rpx;
   align-self: flex-end;
 }
 
@@ -105,6 +106,7 @@ swiper image{
 
 .line{
   font-size: 20rpx;
+  margin-top: 10rpx;
 }
 
 .img{
@@ -122,7 +124,7 @@ swiper image{
 .imageStyle{
   height: 150rpx;
   width: 200rpx;
-  margin-left: 20rpx;
+  margin-left: 80rpx;
   align-self: flex-end;
 }
 
